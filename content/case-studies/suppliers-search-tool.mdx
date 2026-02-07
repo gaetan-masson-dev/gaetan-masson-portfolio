@@ -1,0 +1,132 @@
+---
+title: Suppliers Search Tool
+category: UX Strategy
+description: Redesigning a supplier search flow so that it incorporates multiple verticals and matches users' mental model
+role: Senior Product Designer
+duration: 5 months
+team: 2 designers, 5 developers, 1 researcher
+scope: Research, interaction design, usability testing
+focus: Information architecture, search experience
+---
+
+## Overview
+
+Our B2B platform connected buyers with suppliers across multiple industries (manufacturing, food service, hospitality). The original search tool was built for a single vertical and struggled as we expanded to serve diverse industries with different search needs.
+
+## The Challenge
+
+The existing search experience was causing significant friction:
+
+- Users from different industries had completely different mental models
+- Search results weren't relevant because filters didn't match industry expectations
+- No way to search across multiple verticals simultaneously
+- High bounce rate on search results page (65%)
+- Customer support was overwhelmed with "can't find what I need" tickets
+
+The core issue: we had bolted on new industries to a search tool designed for one specific vertical, creating a confusing and ineffective experience.
+
+<Figure
+  src="/images/suppliers-search-tool/old-search.png"
+  alt="Original search interface"
+  caption="The original single-vertical search interface struggling with multiple industries"
+/>
+
+## Research
+
+We conducted extensive research to understand how different user types approached supplier search:
+
+### User Interviews
+
+Interviewed 30 buyers across manufacturing, food service, and hospitality:
+
+- Manufacturing buyers searched by technical specifications (materials, certifications, capacity)
+- Food service buyers prioritized location, delivery capabilities, and product categories
+- Hospitality buyers focused on style, customization, and designer collections
+
+### Competitive Analysis
+
+Analyzed search patterns on industry-specific marketplaces to understand established conventions.
+
+### Search Analytics
+
+Examined 6 months of search data:
+
+- 40% of searches returned zero results
+- Users abandoned search after 2.3 refinements on average
+- Most common queries mixed industry-specific terminology our system didn't understand
+
+<Figure
+  src="/images/suppliers-search-tool/research-findings.png"
+  alt="Research synthesis board"
+  caption="Synthesis of user interviews and analytics insights"
+/>
+
+## Solution
+
+We redesigned the search experience around user mental models rather than our internal vertical categorization.
+
+### Unified Search Entry
+
+Created a smart search that automatically detected industry context:
+
+- Natural language processing to understand industry-specific terminology
+- Auto-suggestion adapted to user's industry and search history
+- Option to search across all verticals or filter to specific industries
+
+<Figure
+  src="/images/suppliers-search-tool/unified-search.png"
+  alt="New unified search interface"
+  caption="Smart search entry with industry-aware suggestions"
+/>
+
+### Adaptive Filters
+
+Filters dynamically changed based on search context:
+
+- Manufacturing searches showed technical filters (certifications, materials, MOQ)
+- Food service searches prioritized location, delivery, and categories
+- Hospitality searches highlighted style, customization, and designer options
+
+This context-aware approach meant users always saw relevant filters without being overwhelmed by irrelevant options.
+
+<Figure
+  src="/images/suppliers-search-tool/adaptive-filters.png"
+  alt="Context-aware filter panels"
+  caption="Filters adapt to show relevant options for each industry vertical"
+/>
+
+### Improved Results
+
+Redesigned result cards to surface information most relevant to each vertical:
+
+- Manufacturing: Certifications and technical capabilities upfront
+- Food service: Location, delivery radius, product range
+- Hospitality: Visual showcase of work, style tags, customization options
+
+### Search Refinement
+
+Added visual feedback for applied filters and suggested refinements based on common patterns from successful searches.
+
+## Testing & Validation
+
+Conducted usability testing with 15 participants across all verticals:
+
+- Task completion rate improved from 45% to 87%
+- Time to find relevant supplier reduced from 8 minutes to 2.5 minutes
+- Users described the new search as "intuitive" and "actually understands what I need"
+
+## Results
+
+The redesigned search tool significantly improved user success:
+
+- Bounce rate reduced from 65% to 28%
+- Zero-result searches decreased from 40% to 8%
+- Support tickets about search dropped by 70%
+- User engagement with supplier profiles increased by 120%
+
+## Key Learnings
+
+- **Context is everything**: Generic filters don't work when user needs vary dramatically by industry
+- **Match mental models**: Using industry-specific terminology improved comprehension immediately
+- **Progressive disclosure**: Showing relevant options based on context reduced cognitive load
+- **Test with real scenarios**: Usability testing with industry-specific tasks revealed issues we hadn't anticipated

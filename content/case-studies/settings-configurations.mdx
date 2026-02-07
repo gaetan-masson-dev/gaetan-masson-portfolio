@@ -1,0 +1,197 @@
+---
+title: Settings and Configurations
+category: Information architecture
+description: Remodelling a settings information architecture so that users can easily configure an app to fit their needs
+role: Product Designer
+duration: 4 months
+team: 2 designers, 4 developers, 1 researcher
+scope: Information architecture, interaction design, documentation
+focus: Findability, mental models, progressive complexity
+---
+
+## Overview
+
+A B2B SaaS application had accumulated settings organically over 4 years, resulting in a chaotic settings area with over 200 configuration options scattered across multiple pages. Users couldn't find settings they needed, and onboarding required extensive training.
+
+## The Problem
+
+The settings area had become a significant pain point:
+
+- 200+ settings distributed across 15 different pages
+- No clear logic to the organization (chronological, not logical)
+- New features added settings wherever convenient for developers
+- Users needed 30+ minutes to configure basic setup
+- Support tickets about "where is X setting" were the most common inquiry
+- Enterprise customers required dedicated onboarding sessions just for configuration
+
+<Figure
+  src="/images/settings-configurations/before-ia.png"
+  alt="Original settings navigation structure"
+  caption="The original sprawling settings structure with unclear organization"
+/>
+
+## Research & Discovery
+
+We conducted comprehensive research to understand how users thought about configuration:
+
+### Card Sorting
+
+Ran card sorting sessions with 20 users across different roles (admins, managers, end users):
+
+- Participants organized 200 settings into groups that made sense to them
+- Revealed strong patterns around task-based groupings
+- Showed that user roles affected how they mentally organized settings
+
+### User Interviews
+
+Interviewed 15 administrators about their configuration workflows:
+
+- Most referred to documentation constantly
+- Common settings were buried deep in hierarchy
+- No way to customize which settings were easily accessible
+- Uncertainty about which settings affected what parts of the app
+
+### Analytics
+
+Analyzed settings usage data:
+
+- 20% of settings accounted for 80% of configuration activity
+- Users frequently bounced between multiple settings pages
+- Search feature (buried in interface) was heavily used when found
+- Mobile access to settings was attempted but mostly abandoned
+
+<Figure
+  src="/images/settings-configurations/research-data.png"
+  alt="Research synthesis and patterns"
+  caption="Card sorting results showing clear task-based groupings"
+/>
+
+## Design Strategy
+
+Based on research, we established a new approach:
+
+### Task-Based Organization
+
+Reorganized settings around user tasks rather than system architecture:
+
+- **Getting Started**: Essential settings for initial setup
+- **Team & Access**: User management, roles, permissions
+- **Workspace**: Organization, projects, workflow customization
+- **Integrations**: Third-party tools and data connections
+- **Billing & Plans**: Subscription, usage, invoicing
+- **Security & Compliance**: Authentication, data policies, audit logs
+- **Preferences**: Personal settings and notifications
+
+### Progressive Disclosure
+
+Implemented tiered access to complexity:
+
+- Most common settings visible at top level
+- Advanced options collapsed by default with clear labels
+- Dangerous settings (data deletion, etc.) behind confirmation flows
+- Role-based visibility (admins see security, users see preferences)
+
+### Search & Quick Access
+
+Made findability a first-class concern:
+
+- Prominent search with keyword and natural language support
+- "Recently accessed" section for quick return to common settings
+- Favorites/bookmarks for user-specific frequent settings
+- Deep linking to specific settings for documentation and support
+
+## Solution
+
+### New Information Architecture
+
+Created a focused, task-oriented structure:
+
+<Figure
+  src="/images/settings-configurations/new-ia.png"
+  alt="Redesigned settings structure"
+  caption="New task-based information architecture with clear categories"
+/>
+
+### Settings Dashboard
+
+Designed an overview that surfaced important information:
+
+- Setup progress for new accounts
+- Quick access to most common settings
+- Status indicators for important configurations
+- Recent changes log for accountability
+
+<Figure
+  src="/images/settings-configurations/dashboard.png"
+  alt="Settings dashboard interface"
+  caption="Dashboard providing overview and quick access to key settings"
+/>
+
+### Individual Settings Pages
+
+Standardized page layout:
+
+- Clear heading with description of what the page controls
+- Visual grouping of related settings
+- Help text for complex options
+- Impact indicators (who/what this affects)
+- Save confirmation with clear feedback
+
+<Figure
+  src="/images/settings-configurations/settings-page.png"
+  alt="Individual settings page layout"
+  caption="Consistent layout pattern for settings pages with clear grouping"
+/>
+
+### Contextual Settings
+
+Added ability to access relevant settings in context:
+
+- "Settings" link in workspace header goes to workspace settings
+- "Configure" options directly in features that need setup
+- Inline setting adjustments where appropriate
+
+## Documentation & Onboarding
+
+Created supporting resources:
+
+- Onboarding checklist guiding through essential settings
+- Interactive tooltips explaining impact of changes
+- Documentation linked from each settings page
+- Video walkthroughs for complex configurations
+
+## Testing & Validation
+
+Conducted usability testing with 12 participants:
+
+### Initial Testing
+
+- Task completion rate: 85% (up from 45%)
+- Time to find specific setting: 30 seconds (down from 5+ minutes)
+- Users successfully completed configuration without external help
+
+### Iteration Based on Feedback
+
+- Added breadcrumbs for better navigation hierarchy
+- Made search more prominent in mobile view
+- Added "Related settings" suggestions
+- Improved help text based on common confusion points
+
+## Results
+
+The restructured settings dramatically improved user experience:
+
+- Support tickets about finding settings decreased by 82%
+- Time to complete initial setup reduced from 30+ minutes to 8 minutes
+- Enterprise onboarding time reduced from 2 hours to 30 minutes
+- Settings search usage increased by 340% (after making it prominent)
+- User satisfaction scores for configuration increased from 2.1/5 to 4.3/5
+
+## Key Learnings
+
+- **Mental models over system architecture**: Organizing around user tasks rather than technical implementation made settings intuitive
+- **Not all settings are equal**: Surfacing common settings and hiding advanced options reduced overwhelm
+- **Findability is critical**: Search isn't optional when you have 200+ settings
+- **Context matters**: Letting users access settings where they work reduced friction significantly
+- **Progressive complexity**: Start simple, reveal advanced options when needed
+- **Document as you design**: Help text and documentation needed to be part of the design, not an afterthought

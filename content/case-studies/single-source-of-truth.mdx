@@ -1,0 +1,116 @@
+---
+title: Single Source of Truth
+category: Design Ops
+description: Scaling a design file structure to function with an ever growing design organisation
+role: Design Operations Lead
+duration: 4 months
+team: 3 designers, 1 design manager
+scope: Design system architecture and file organization
+focus: Scalability, collaboration, component governance
+---
+
+## Overview
+
+As the design team grew from 5 to 15 designers, our Figma file structure became increasingly chaotic. Files were duplicated, components were inconsistent, and designers struggled to find the latest versions of designs. We needed a systematic approach to organize and scale our design files.
+
+## The Problem
+
+The rapid team growth exposed critical issues in our design workflow:
+
+- Designers couldn't find the "source of truth" for components and patterns
+- Multiple versions of the same component existed across different files
+- No clear file naming or organization conventions
+- Component libraries weren't properly maintained or documented
+- Onboarding new designers took weeks as they learned the scattered system
+
+<Figure
+  src="/images/single-source-of-truth/before.png"
+  alt="Chaotic file structure"
+  caption="Our original file structure with scattered components and duplicates"
+/>
+
+## Research & Analysis
+
+I conducted an audit of our entire Figma workspace and interviewed all designers to understand their pain points. The analysis revealed:
+
+- Over 200 Figma files with unclear naming and purpose
+- Components were duplicated across 15+ files
+- 60% of designers reported spending significant time searching for assets
+- New designers took 2-3 weeks to understand the file structure
+
+## Solution Strategy
+
+We implemented a structured approach based on atomic design principles and clear governance:
+
+### File Architecture
+
+Created a hierarchical system with clear ownership and purpose:
+
+- **Foundation**: Colors, typography, spacing, icons
+- **Components**: Reusable UI components (buttons, inputs, cards)
+- **Patterns**: Composed patterns (forms, navigation, modals)
+- **Features**: Product-specific feature designs
+- **Exploration**: Sandbox for experimental work
+
+<Figure
+  src="/images/single-source-of-truth/architecture.png"
+  alt="New file architecture diagram"
+  caption="Hierarchical file structure from foundations to features"
+/>
+
+### Naming Conventions
+
+Established clear naming patterns:
+
+- `[Type] - [Name] - [Status]`
+- Examples: `Component - Buttons - Live`, `Feature - Dashboard - In Progress`
+- Status labels: Live, In Progress, Archive, Exploration
+
+### Component Governance
+
+Implemented a component lifecycle:
+
+1. Propose new components in Exploration files
+2. Review with design team
+3. Add to Component library with documentation
+4. Deprecate old versions with migration guides
+
+<Figure
+  src="/images/single-source-of-truth/governance.png"
+  alt="Component governance workflow"
+  caption="Lifecycle for proposing, reviewing, and maintaining components"
+/>
+
+### Documentation
+
+Created comprehensive documentation in Notion:
+
+- File structure explanation and rationale
+- Naming convention guidelines
+- Component usage documentation
+- Onboarding checklist for new designers
+
+## Implementation
+
+Rolled out the new structure in phases:
+
+1. **Foundation Week**: Restructured core design tokens and base components
+2. **Migration Sprint**: Moved existing work into new structure
+3. **Team Training**: Workshop sessions on new conventions
+4. **Ongoing Maintenance**: Weekly component review sessions
+
+## Results
+
+The new structure transformed how the team collaborated:
+
+- Time to find components reduced from 15 minutes to 2 minutes
+- Designer onboarding time reduced from 3 weeks to 3 days
+- Component duplication eliminated (200+ files consolidated to 40)
+- Design-to-development handoff improved with single source of truth
+
+## Key Learnings
+
+- **Start with foundations**: Establishing clear base tokens (colors, typography) created consistency across all components
+- **Governance is critical**: Without clear ownership and processes, structure degrades quickly
+- **Documentation matters**: Written guidelines were essential for maintaining consistency as the team grew
+- **Involve the team**: Getting buy-in early through workshops made adoption much smoother
