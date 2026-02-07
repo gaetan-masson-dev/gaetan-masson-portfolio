@@ -1,0 +1,154 @@
+---
+title: Product Checkout
+category: Interaction design
+description: Building a checkout flow allowing users to book accommodation and marine activities in a few clicks
+role: Lead Product Designer
+duration: 3 months
+team: 1 designer (me), 3 developers, 1 PM
+scope: End-to-end checkout experience design
+focus: Conversion optimization, mobile experience
+---
+
+## Overview
+
+A tourism platform needed a streamlined checkout flow for booking combined packages of accommodation and marine activities (diving, sailing, snorkeling). The existing process required users to book each item separately, leading to high cart abandonment.
+
+## The Challenge
+
+The original checkout process was fragmented:
+
+- Users had to complete separate bookings for accommodation and activities
+- Payment happened twice, creating friction and confusion
+- No clear overview of total package pricing
+- Mobile experience was particularly painful (60% of traffic)
+- Cart abandonment rate was 78%
+
+The business goal was clear: create a unified checkout that felt as simple as booking a hotel, even though we were coordinating multiple vendors and complex scheduling.
+
+<Figure
+  src="/images/product-checkout/old-flow.png"
+  alt="Original checkout flow diagram"
+  caption="The fragmented original checkout requiring multiple separate bookings"
+/>
+
+## Research
+
+I analyzed user behavior through session recordings and conducted interviews with 12 users who had abandoned bookings:
+
+### Key Insights
+
+- Users expected to book everything in one transaction
+- Uncertainty about activity timing relative to accommodation created anxiety
+- Mobile users struggled with form inputs and date selection
+- Users abandoned when surprised by additional fees late in checkout
+- Need to compare different activity options without losing accommodation selection
+
+## Design Principles
+
+Based on research, I established core principles:
+
+1. **Transparent pricing**: Show all costs upfront, no surprises
+2. **Unified flow**: One cart, one checkout, one payment
+3. **Flexibility**: Easy to modify package before payment
+4. **Mobile-first**: Optimize for touch and smaller screens
+5. **Confidence**: Clear information about timing, policies, and what's included
+
+## Solution
+
+### Unified Cart
+
+Redesigned the cart to show accommodation + activities as a cohesive package:
+
+- Visual timeline showing how activities fit with accommodation dates
+- Clear breakdown of costs (accommodation, activities, fees, taxes)
+- Easy to add/remove activities without losing progress
+
+<Figure
+  src="/images/product-checkout/unified-cart.png"
+  alt="Unified shopping cart interface"
+  caption="Cart showing accommodation and activities as one coordinated package"
+/>
+
+### Streamlined Form
+
+Simplified information collection:
+
+- Smart defaults based on accommodation booking (dates, guest count)
+- Progressive disclosure of required fields
+- Mobile-optimized date picker and input fields
+- Save guest information for faster repeat bookings
+
+<Figure
+  src="/images/product-checkout/checkout-form.png"
+  alt="Checkout form interface"
+  caption="Streamlined form with smart defaults and mobile-optimized inputs"
+/>
+
+### Activity Scheduling
+
+Created an intuitive way to schedule activities:
+
+- Visual calendar showing available time slots
+- Automatic conflict detection if activities overlap
+- Suggestions for optimal activity scheduling based on popular patterns
+- Clear indication of last booking time before trip
+
+### Review & Confirmation
+
+Final review step with clear summary:
+
+- Complete itinerary with accommodation and activity schedule
+- Total cost breakdown
+- Cancellation and modification policies
+- What to expect next (confirmation emails, check-in details)
+
+<Figure
+  src="/images/product-checkout/confirmation.png"
+  alt="Booking confirmation screen"
+  caption="Clear confirmation with complete itinerary and next steps"
+/>
+
+## Mobile Optimization
+
+Given 60% mobile traffic, I paid special attention to mobile experience:
+
+- Large touch targets (minimum 44px)
+- Single-column layout to avoid horizontal scrolling
+- Native date pickers where available
+- Sticky bottom bar with total price and CTA
+- Smart keyboard types for different inputs (email, phone, numbers)
+
+## Testing & Iteration
+
+Conducted usability testing with 10 participants (5 mobile, 5 desktop):
+
+### Initial Findings
+
+- Date picker was confusing for activity scheduling
+- Users wanted to see photos of activities in the cart
+- Pricing breakdown needed to be more prominent
+- Mobile form required too much scrolling
+
+### Refinements
+
+- Redesigned activity scheduler with visual day selector
+- Added activity thumbnails to cart
+- Made pricing sticky on scroll
+- Reduced mobile form fields by consolidating related information
+
+## Results
+
+The new checkout flow significantly improved conversion:
+
+- Cart abandonment decreased from 78% to 34%
+- Booking completion time reduced from 12 minutes to 4 minutes
+- Mobile conversion improved by 156%
+- Customer support inquiries about booking process dropped by 65%
+- Average booking value increased by 23% (users added more activities)
+
+## Key Learnings
+
+- **Remove uncertainty**: Users need confidence about scheduling, costs, and policies before committing
+- **Mobile isn't just smaller desktop**: Touch targets, input types, and interaction patterns need specific consideration
+- **One flow, many edge cases**: Complex backend coordination must be hidden behind simple interface
+- **Test with real content**: Generic lorem ipsum hid issues that only appeared with actual activity names and descriptions
