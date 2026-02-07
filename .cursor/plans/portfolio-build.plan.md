@@ -46,7 +46,7 @@ todos:
     status: completed
   - id: husky-lint-staged
     content: Add Husky + lint-staged for pre-commit hooks (auto-format, linting)
-    status: pending
+    status: completed
   - id: next-sitemap
     content: Add next-sitemap package for automatic sitemap.xml and robots.txt generation
     status: pending
@@ -73,7 +73,7 @@ todos:
     status: pending
   - id: dev-scripts
     content: Add npm scripts for type-check, lint:fix, and validate
-    status: pending
+    status: completed
   - id: build-validation
     content: Add bundle analyzer and type-check to build process
     status: pending
@@ -106,7 +106,7 @@ todos:
     status: pending
   - id: editorconfig
     content: Add .editorconfig file for consistent formatting across editors
-    status: pending
+    status: completed
   - id: dependabot
     content: Enable Dependabot for dependency security scanning
     status: pending
