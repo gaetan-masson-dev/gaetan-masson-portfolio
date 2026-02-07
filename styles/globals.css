@@ -321,15 +321,11 @@ li {
   margin-bottom: var(--spacing-xs);
 }
 
-.email-protected-footer {
-  cursor: pointer;
-}
-
-.email-protected-footer a {
+.footer-email {
   color: var(--color-text-light);
 }
 
-.email-protected-footer a:hover {
+.footer-email:hover {
   color: var(--color-link);
 }
 

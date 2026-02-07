@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 
+import EmailProtected from '@/components/EmailProtected'
+
 export const metadata: Metadata = {
   title: 'Contact - Gaetan Masson',
   description: 'Get in touch with Gaetan Masson, product designer.',
@@ -22,9 +24,7 @@ export default function ContactPage() {
           <div className="contact-method">
             <strong>Email</strong>
             <p>
-              <span className="email-protected" data-user="hello" data-domain="gaetanmasson.me">
-                hello [at] gaetanmasson.me
-              </span>
+              <EmailProtected user="hello" domain="gaetanmasson.me" />
             </p>
           </div>
 
@@ -41,22 +41,6 @@ export default function ContactPage() {
             </p>
           </div>
         </div>
-
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                const el = document.querySelector('.email-protected');
-                if (el) {
-                  const user = el.dataset.user;
-                  const domain = el.dataset.domain;
-                  const email = user + '@' + domain;
-                  el.innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
-                }
-              })();
-            `,
-          }}
-        />
       </div>
     </div>
   )

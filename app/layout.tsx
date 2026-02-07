@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 
 import Link from 'next/link'
 
+import EmailProtected from '@/components/EmailProtected'
 import '@/styles/globals.css'
 
 export const metadata: Metadata = {
@@ -42,13 +43,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               Pyrenees
             </p>
             <div className="footer-links">
-              <span
-                className="email-protected-footer"
-                data-user="hello"
-                data-domain="gaetanmasson.me"
-              >
-                Email
-              </span>
+              <EmailProtected
+                user="hello"
+                domain="gaetanmasson.me"
+                label="Email"
+                className="footer-email"
+              />
               <a
                 href="https://linkedin.com/in/gaetanmasson"
                 target="_blank"
@@ -61,23 +61,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <p>&copy; {new Date().getFullYear()} Gaetan Masson</p>
           </div>
         </footer>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                document.querySelectorAll('[class^="email-protected"]').forEach(el => {
-                  const user = el.dataset.user;
-                  const domain = el.dataset.domain;
-                  if (user && domain) {
-                    const email = user + '@' + domain;
-                    const text = el.textContent.trim() === 'Email' ? 'Email' : email;
-                    el.innerHTML = '<a href="mailto:' + email + '">' + text + '</a>';
-                  }
-                });
-              })();
-            `,
-          }}
-        />
       </body>
     </html>
   )
