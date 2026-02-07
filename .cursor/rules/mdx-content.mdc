@@ -1,0 +1,31 @@
+---
+description: Standards for MDX content and Case Studies
+globs: content/case-studies/*.mdx
+alwaysApply: false
+---
+
+# MDX Content & Case Studies
+
+## Directory Structure
+- MDX files: `content/case-studies/[slug].mdx`
+- Images: `public/images/[slug]/[image-name].png`
+
+## Frontmatter Requirements
+Each case study must include:
+- `title`: string
+- `category`: string (e.g., "UX Strategy", "Design Ops")
+- `description`: string (one-liner for cards)
+- `role`: string
+- `duration`: string
+- `team`: string
+- `scope`: string
+- `focus`: string (optional)
+
+## MDX Components
+- **Figure**: Use the `<Figure />` component for all images.
+  - Props: `src`, `alt`, `caption`.
+  - Example: `<Figure src="/images/slug/img.png" alt="Alt text" caption="Description" />`
+
+## Content Structure
+- Use semantic headings (h2, h3).
+- Maintain a consistent narrative: Overview -> The Challenge -> Research/Process -> Solution -> Results -> Key Learnings.

@@ -1,0 +1,25 @@
+---
+description: Core coding standards and project philosophy for the Gaetan Masson portfolio
+alwaysApply: true
+---
+
+# Project Standards & Philosophy
+
+## Core Principles
+- **Content-first**: Prioritize content and typography over decorative elements.
+- **Fast & SEO-friendly**: Use Server Components by default. Keep the JS bundle minimal.
+- **Accessible**: Ensure high contrast, proper semantic HTML, and ARIA labels where needed.
+- **Minimalist**: Clean typography, consistent spacing, no fancy animations.
+
+## Tech Stack
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript (Strict mode)
+- **React**: version 19
+- **Content**: MDX with frontmatter (gray-matter)
+- **Styling**: Global CSS (minimalist)
+
+## Code Standards
+- Use functional components and modern React patterns.
+- Prefer Server Components unless client-side interactivity is absolutely required.
+- Maintain consistent spacing using CSS variables defined in `styles/globals.css`.
+- All text should be easily crawlable by search engines.
