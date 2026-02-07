@@ -7,7 +7,7 @@ alwaysApply: true
 
 ## Commit Messages
 - **Concise**: Keep commit messages short and focused. One line is preferred unless the change is highly complex.
-- **No Self-Tagging**: Do not include "Co-authored-by: Cursor" or any other mentions of AI/Cursor in the commit message.
+- **No Self-Tagging**: Do not include "Co-authored-by" or any other mentions of the AI in the commit message.
 - **Style**: Use the imperative mood (e.g., "Add contact page" instead of "Added contact page").
 
 ## Workflow

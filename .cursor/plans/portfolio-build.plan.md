@@ -24,7 +24,7 @@ todos:
     content: Create public/images directory structure and update .gitignore
     status: completed
   - id: linting-formatting-modern
-    content: Setup modern ESLint 9 Flat Config, Prettier, and Cursor rules
+    content: Setup modern ESLint 9 Flat Config, Prettier, and project rules
     status: completed
   - id: contact-page
     content: Add Contact page with bot-protected email links
