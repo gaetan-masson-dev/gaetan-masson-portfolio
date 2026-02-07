@@ -13,7 +13,7 @@ alwaysApply: false
 
 ## Prettier
 - **Config**: `.prettierrc`.
-- **Workflow**: Format on save is enabled in Cursor.
+- **Workflow**: Format on save is enabled in the IDE.
 
 ## Common Linting Overrides
 - `react/react-in-jsx-scope`: Off (Next.js handles this).
