@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { linkTextClass } from '@/lib/link-styles'
+import { caseStudyTitleLinkClass, linkTextClass } from '@/lib/link-styles'
 import {
   DEFAULT_CASE_STUDY_IMAGE_HEIGHT,
   DEFAULT_CASE_STUDY_IMAGE_WIDTH,
@@ -49,10 +49,7 @@ export default function HomePage() {
                     {caseStudy.frontmatter.category}
                   </div>
                   <h2 className="text-[1.75rem] font-semibold mt-0 mb-3">
-                    <Link
-                      href={`/work/${caseStudy.slug}`}
-                      className={`${linkTextClass} font-semibold`}
-                    >
+                    <Link href={`/work/${caseStudy.slug}`} className={caseStudyTitleLinkClass}>
                       {caseStudy.frontmatter.title}
                     </Link>
                   </h2>
