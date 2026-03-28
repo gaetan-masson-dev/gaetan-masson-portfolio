@@ -13,11 +13,11 @@ export default function SiteHeader() {
       <div className="max-w-wide mx-auto px-6 flex justify-between items-center flex-col md:flex-row gap-6 md:items-center">
         <Link
           href="/"
-          className="text-lg font-semibold text-default no-underline hover:no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-sm"
+          className="text-xl font-semibold text-default no-underline hover:no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-sm"
         >
           Gaetan Masson
         </Link>
-        <nav className="flex gap-8" aria-label="Main">
+        <nav className="flex gap-8 text-xl" aria-label="Main">
           <Link
             href="/"
             className={navLinkClass(workNavActive(pathname))}
