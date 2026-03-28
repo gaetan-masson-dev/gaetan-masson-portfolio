@@ -12,8 +12,7 @@
   /* Max widths: use --max-width-* so Tailwind emits max-w-* utilities */
   --max-width-wide: 90rem;
   --max-width-content: 64rem;
-  /* Prose measure: 1ch ≈ width of "0" in the font — ~100-character lines */
-  --max-width-measure: 100ch;
+  --max-width-reading: 80ch;
 
   /* Font families */
   --font-family-sans:
@@ -32,12 +31,13 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  /* 18px body copy; `rem` elsewhere still uses the browser root (usually 16px). */
   body {
     font-family: var(--font-family-sans);
     color: var(--color-default);
     background-color: var(--color-background);
-    line-height: 1.4;
-    font-size: 1rem;
+    line-height: 1.5;
+    font-size: 1.125rem;
   }
 
   h1,
@@ -114,8 +114,8 @@
 
   .case-study-content p,
   .case-study-content li {
-    font-size: 1.125rem;
-    line-height: 1.8;
+    font-size: inherit;
+    line-height: 1.5;
     color: color-mix(in srgb, var(--color-default) 92%, transparent);
   }
 
@@ -142,7 +142,7 @@
   }
 
   .case-study-content figcaption {
-    max-width: var(--max-width-measure);
+    max-width: var(--max-width-reading);
     margin-left: auto;
     margin-right: auto;
   }
@@ -151,7 +151,6 @@
     width: 100%;
     border-collapse: collapse;
     margin: 2.5rem 0;
-    font-size: 1rem;
   }
 
   .case-study-content th,
