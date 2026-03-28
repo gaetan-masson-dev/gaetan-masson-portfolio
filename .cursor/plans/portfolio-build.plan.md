@@ -286,6 +286,7 @@ Create placeholder image structure:
 **Type Safety**: Full TypeScript coverage for frontmatter, MDX utilities, and components.
 
 **Design Component Library**:
+
 - **Monorepo Structure**: Transitioning to a monorepo using npm workspaces to house the portfolio app and the design-system package.
 - **Storybook**: For isolated component development and documentation.
 - **Chromatic**: For visual regression testing and hosting the design system.
@@ -316,10 +317,13 @@ Create placeholder image structure:
 ### Phase 1: Critical Fixes (High Priority)
 
 #### Fix ESLint Configuration
+
 The `eslint.config.mjs` file has corrupted import statements that need immediate attention. This blocks proper linting across the project.
 
 #### Replace Inline Email Script
+
 Move the email obfuscation from `dangerouslySetInnerHTML` in `app/layout.tsx` to a proper client component. This enables:
+
 - Content Security Policy (CSP) implementation
 - Better Next.js compliance
 - Improved security
@@ -327,6 +331,7 @@ Move the email obfuscation from `dangerouslySetInnerHTML` in `app/layout.tsx` to
 ### Phase 2: Development Experience
 
 #### Pre-commit Automation
+
 - **Husky + lint-staged**: Auto-format code and run linting checks before commits
 - **EditorConfig**: Ensure consistent formatting across different editors
 - **Enhanced Scripts**: 
@@ -337,32 +342,38 @@ Move the email obfuscation from `dangerouslySetInnerHTML` in `app/layout.tsx` to
 ### Phase 3: Performance & SEO
 
 #### Image Optimization
+
 - Replace `<img>` in Figure component with Next.js `<Image>`
 - Add image dimensions to frontmatter for better CLS scores
 - Implement blur placeholders for better UX
 
 #### SEO Enhancements
+
 - **next-sitemap**: Auto-generate sitemap.xml and robots.txt
 - **RSS Feed**: Generate feed for case studies to improve discoverability
 - **Reading Time**: Calculate and display reading time for case studies
 
 #### Security
+
 - **Security Headers**: Implement CSP, X-Frame-Options, X-Content-Type-Options in `next.config.mjs`
 - **Environment Configuration**: Add `.env.example` and document required variables
 
 ### Phase 4: Code Quality & Type Safety
 
 #### TypeScript Enhancements
+
 - Enable `noUncheckedIndexedAccess` for safer array/object access
 - Ensure `strictNullChecks` is enabled
 - Consider `verbatimModuleSyntax` for better imports
 
 #### Runtime Validation
+
 - **Zod Integration**: Validate MDX frontmatter at build time
 - Catch content errors early
 - Better type inference and safety
 
 #### Testing
+
 - **Vitest**: Fast, modern unit testing
 - **React Testing Library**: Component testing
 - Focus on utility functions (`lib/mdx.ts`) first
@@ -371,35 +382,41 @@ Move the email obfuscation from `dangerouslySetInnerHTML` in `app/layout.tsx` to
 ### Phase 5: Content & MDX
 
 #### MDX Enhancements
+
 - Add remark/rehype plugins for better markdown features
 - `remark-gfm` for GitHub-flavored markdown
 - Syntax highlighting for code blocks
 - Enhanced typography with remark-smartypants
 
 #### Content Validation
+
 - Script to validate all MDX files have required frontmatter
 - Check for broken image links  
 - Verify slugs are unique
 - Run automatically in CI pipeline
 
 #### Component Library
+
 - Create more reusable MDX components (Callout, CodeBlock, Video, etc.)
 - Document in a components page or style guide
 
 ### Phase 6: Build & CI/CD
 
 #### Build Enhancements
+
 - **Bundle Analyzer**: Monitor bundle size with `@next/bundle-analyzer`
 - **Type-check Before Build**: Catch type errors before deployment
 - **Build Validation**: Ensure all checks pass
 
 #### GitHub Actions Workflow
+
 - Run lint/type-check/tests on every PR
 - Auto-deploy to preview environments (Vercel/Netlify)
 - Check for broken links
 - Automated accessibility testing
 
 #### Dependency Management
+
 - **Dependabot**: Automated dependency updates
 - Regular `npm audit` checks
 - Consider Snyk for advanced vulnerability scanning
@@ -407,10 +424,12 @@ Move the email obfuscation from `dangerouslySetInnerHTML` in `app/layout.tsx` to
 ### Phase 7: Accessibility & UX
 
 #### Keyboard Navigation
+
 - **Skip-to-Content Link**: First focusable element for keyboard users
 - **Improved Focus Indicators**: Visible focus styles using `focus-visible`
 
 #### Dark Mode
+
 - Use existing CSS variables foundation
 - Respect `prefers-color-scheme`
 - Add toggle with localStorage persistence
@@ -419,11 +438,13 @@ Move the email obfuscation from `dangerouslySetInnerHTML` in `app/layout.tsx` to
 ### Phase 8: Architecture & Organization
 
 #### Code Organization
+
 - Move shared TypeScript types to `types/` directory
 - Create `constants/` directory for site configuration
 - **Metadata Management**: Centralize in `lib/metadata.ts` with reusable generators
 
 #### Documentation
+
 - **CHANGELOG.md**: Track changes over time
 - **CONTRIBUTING.md**: Document standards and processes
 - **JSDoc Comments**: Document exported functions and complex logic
@@ -452,6 +473,7 @@ Move the email obfuscation from `dangerouslySetInnerHTML` in `app/layout.tsx` to
 ### Implementation Priority
 
 **Phase 1** (Critical - Do First):
+
 1. Fix ESLint config corruption
 2. Replace email inline script
 3. Add environment configuration
@@ -479,3 +501,4 @@ Using actual content from gaetanmasson.me:
 - All 6 case studies with their titles, categories, and descriptions
 - About page content mentioning German ed-Tech company and French Pyrenees
 - Footer social links (will extract email/LinkedIn from current site if visible)
+
