@@ -1,133 +1,108 @@
 ---
-title: Suppliers Search Tool
+title: Suppliers search tool
 category: UX Strategy
 description: Redesigning a supplier search flow so that it incorporates multiple verticals and matches users' mental model
-role: Senior Product Designer
-duration: 5 months
-team: 2 designers, 5 developers, 1 researcher
-scope: Research, interaction design, usability testing
-focus: Information architecture, search experience
-image: /images/suppliers-search-tool/search-interface.png
+role: Lead Product Designer
+duration: 4 months
+team: 1 Product Manager, 3 Engineers
+logo: /images/suppliers-search-tool/Dark-logo.svg
+image: /images/suppliers-search-tool/Search.png
 ---
 
-## Overview
+## Summary
 
-Our B2B platform connected buyers with suppliers across multiple industries (manufacturing, food service, hospitality). The original search tool was built for a single vertical and struggled as we expanded to serve diverse industries with different search needs.
+ZuBlu is a dive travel startup revolutionising its market by allowing customers to book sustainable accommodations and diving trips at once.
 
-## The Challenge
+In June 2020, after adding 3 senior engineers to our team, we decided to tackle the most complicated project left before being officially done with our whole platform redesign. The problem was as follows:
 
-The existing search experience was causing significant friction:
+How can users efficiently find, compare and select suppliers?
 
-- Users from different industries had completely different mental models
-- Search results weren't relevant because filters didn't match industry expectations
-- No way to search across multiple verticals simultaneously
-- High bounce rate on search results page (65%)
-- Customer support was overwhelmed with "can't find what I need" tickets
+---
 
-The core issue: we had bolted on new industries to a search tool designed for one specific vertical, creating a confusing and ineffective experience.
+## Problem
+
+When it was created, ZuBlu was offering two product verticals: resorts and liveaboards. In those two verticals were subtypes such as packaged resorts (resorts with fixed lengths of stay) and charter boats (the whole boat is rented by a group). Later on, we added other verticals such as day trips and eco-ventures which brought it to a total of 4 verticals.
 
 <Figure
-  src="/images/suppliers-search-tool/old-search.png"
-  alt="Original search interface"
-  caption="The original single-vertical search interface struggling with multiple industries"
+  src="/images/suppliers-search-tool/Old-search.jpg"
+  alt=""
+  caption="The old search was mixing verticals and displaying way too much information"
 />
 
-## Research
-
-We conducted extensive research to understand how different user types approached supplier search:
-
-### User Interviews
-
-Interviewed 30 buyers across manufacturing, food service, and hospitality:
-
-- Manufacturing buyers searched by technical specifications (materials, certifications, capacity)
-- Food service buyers prioritized location, delivery capabilities, and product categories
-- Hospitality buyers focused on style, customization, and designer collections
-
-### Competitive Analysis
-
-Analyzed search patterns on industry-specific marketplaces to understand established conventions.
-
-### Search Analytics
-
-Examined 6 months of search data:
-
-- 40% of searches returned zero results
-- Users abandoned search after 2.3 refinements on average
-- Most common queries mixed industry-specific terminology our system didn't understand
+The global search input would allow users to search for non-product items such as articles or destinations but would only allow them to search for specific product items by name. It was impossible to make a general search and reach a product search result view from this entry point.
 
 <Figure
-  src="/images/suppliers-search-tool/research-findings.png"
-  alt="Research synthesis board"
-  caption="Synthesis of user interviews and analytics insights"
+  src="/images/suppliers-search-tool/Old-widget.jpg"
+  alt=""
+  caption="The previous design wasn't allowing users to access search with the search input"
+/>
+
+The only way to do so (eg. searching for resorts in Bali) was to use a wizard located on the home page. If users would find it and land on the result page, all product verticals would be mixed together and filter options would be either vague or overly complicated.
+
+---
+
+## Role
+
+As the only designer in the team, I was responsible for producing all design-related materials. Our team consisted of 3 Engineers and 1 Product Manager. I was particularly excited by the project since it was directly impacting our user's core experience.
+
+---
+
+## Approach
+
+This search project was the most interesting and impactful project I tackled with ZuBlu. This functionality is a heavy piece of engineering and it's one of the most important features for a travel platform. How could we make sure to bring high value to users while delivering the project in a reasonable timeframe?
+
+Research showed that users were likely to browse for a single product vertical at a time. Based on this, we decided to separate our product verticals and provide dedicated search results for each of them. This decision allowed us to customise the search widget, search filters and search results for each supplier type. A second decision was to keep results as close as possible to what they were. This allowed for a much-reduced development time. After settling on this design direction, we proceeded with user-testing and iterating.
+
+<Figure
+  src="/images/suppliers-search-tool/Search-result-ideation.jpg"
+  alt=""
+  caption="We first tried to include product verticals and the search widget on result pages before deciding otherwise"
 />
 
 ## Solution
 
-We redesigned the search experience around user mental models rather than our internal vertical categorization.
-
-### Unified Search Entry
-
-Created a smart search that automatically detected industry context:
-
-- Natural language processing to understand industry-specific terminology
-- Auto-suggestion adapted to user's industry and search history
-- Option to search across all verticals or filter to specific industries
+User testing showed that splitting verticals into their own search result was the correct way to go. Users understood our information architecture easily and were finding the right products quickly. Since we wanted to save development time, we decided to keep resort search results as close as what we already had.
 
 <Figure
-  src="/images/suppliers-search-tool/unified-search.png"
-  alt="New unified search interface"
-  caption="Smart search entry with industry-aware suggestions"
+  src="/images/suppliers-search-tool/Search-result.jpg"
+  alt=""
+  caption="Splitting verticals allowed us to tailor the user experience for each type of supplier"
 />
 
-### Adaptive Filters
-
-Filters dynamically changed based on search context:
-
-- Manufacturing searches showed technical filters (certifications, materials, MOQ)
-- Food service searches prioritized location, delivery, and categories
-- Hospitality searches highlighted style, customization, and designer options
-
-This context-aware approach meant users always saw relevant filters without being overwhelmed by irrelevant options.
+Now that we had dedicated search results, we were able to display liveaboard trips and itineraries directly in the results. That allowed us to dramatically increase pricing transparency and reduce by 10 folds user-salesperson interactions needed in order to close deals.
 
 <Figure
-  src="/images/suppliers-search-tool/adaptive-filters.png"
-  alt="Context-aware filter panels"
-  caption="Filters adapt to show relevant options for each industry vertical"
+  src="/images/suppliers-search-tool/Search-widget.jpg"
+  alt=""
+  caption="The new search widget allowed us to customise inputs for each vertical"
 />
 
-### Improved Results
+The part which took the most time to get right was the search widget which came to replace the search global input. The widget had a lot of user interactions and was the functionality main entry point. We took inspiration from Airbnb's solution and tailored it to our needs. After testing a few iterations, we settled on a solution that was functional, doable with our current tech stack and reduce engineering overhead.
 
-Redesigned result cards to surface information most relevant to each vertical:
+---
 
-- Manufacturing: Certifications and technical capabilities upfront
-- Food service: Location, delivery radius, product range
-- Hospitality: Visual showcase of work, style tags, customization options
+## Challenges
 
-### Search Refinement
+The main challenge we encountered when tackling this project was related to the result accuracy. Both quick search (suggestions provided while user types in search input) and search results needed to be contextual and accurate in order to be functional. How could we make sure that users found the right destination or the right supplier?
 
-Added visual feedback for applied filters and suggested refinements based on common patterns from successful searches.
+To solve this challenge, we decided to only allow users to search for destinations like "Bali" or "Maldives". Highly specific searches like "Dive with manta rays in South-East Asia" wouldn't be permitted. Then we implemented suggestions in our quick search results which followed our information architecture: first countries, then regions, then destinations and finally suppliers. The more specific users input would be (ie. typing more characters), the more specific the search results would become (ie. looking down the information architecture tree).
 
-## Testing & Validation
+<Figure
+  src="/images/suppliers-search-tool/Search-widget-mobile-1.jpg"
+  alt=""
+  caption="We kept the flow as simple as possible and only allowed to search for specific destinations or suppliers"
+/>
 
-Conducted usability testing with 15 participants across all verticals:
+Finally, we decided to stay away from providing search results based on search frequency (ie. displaying most searched results first) since we didn't have enough traffic on our platform at the time.
 
-- Task completion rate improved from 45% to 87%
-- Time to find relevant supplier reduced from 8 minutes to 2.5 minutes
-- Users described the new search as "intuitive" and "actually understands what I need"
+---
 
 ## Results
 
-The redesigned search tool significantly improved user success:
+At the time of writing this case study, we have had really little user feedback regarding this project. The global pandemic and the travel limitations it created prevented people to travel and platform traffic came to a halt for months. Now that some countries start to reopen, we will monitor results and iterate on our current solution.
 
-- Bounce rate reduced from 65% to 28%
-- Zero-result searches decreased from 40% to 8%
-- Support tickets about search dropped by 70%
-- User engagement with supplier profiles increased by 120%
+---
 
-## Key Learnings
+## Learnings
 
-- **Context is everything**: Generic filters don't work when user needs vary dramatically by industry
-- **Match mental models**: Using industry-specific terminology improved comprehension immediately
-- **Progressive disclosure**: Showing relevant options based on context reduced cognitive load
-- **Test with real scenarios**: Usability testing with industry-specific tasks revealed issues we hadn't anticipated
+The main learning we had during this project was related to the global situation. How can we test a solution when users are not actively using it? I always advocate for evidence-based design with pre and post design research to allow learnings and iterations, yet sometimes, going with one's assumptions, quick guerrilla testing and later monitoring live results is a quick and efficient way for small teams to deliver fast.

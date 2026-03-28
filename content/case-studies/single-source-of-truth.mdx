@@ -2,116 +2,135 @@
 title: Single Source of Truth
 category: Design Ops
 description: Scaling a design file structure to function with an ever growing design organisation
-role: Design Operations Lead
-duration: 4 months
-team: 3 designers, 1 design manager
-scope: Design system architecture and file organization
-focus: Scalability, collaboration, component governance
-image: /images/single-source-of-truth/component-library.png
+role: Product Design Lead
+duration: 1 month
+team: 2 Designers
+logo: /images/single-source-of-truth/pipedrive_logo-1.svg
+image: /images/single-source-of-truth/Single-source-of-truth.png
 ---
 
-## Overview
+## Problem
 
-As the design team grew from 5 to 15 designers, our Figma file structure became increasingly chaotic. Files were duplicated, components were inconsistent, and designers struggled to find the latest versions of designs. We needed a systematic approach to organize and scale our design files.
+When I first joined Pipedrive in 2018, we were around 15 members in the design departement. By 2021, the team had grown to 50+ people. During those three years, the management team started to get more and more negative feedback regarding design specifications. The problem was starting to get out of hand and we decided to investigate.
 
-## The Problem
+After conducting key stakeholder interviews, our discoveries were as follows:
 
-The rapid team growth exposed critical issues in our design workflow:
+- Stakeholders (Product Managers, Engineers, Content Writters, etc.) struggled to find the latest version of a live feature
+- Functionalities weren't always clearly documented anywhere
+- Projects were mostly created from scratch and ended-up being not aligned between teams
+- Security was poorly managed, external stakeholders could sometimes access business sentive data
 
-- Designers couldn't find the "source of truth" for components and patterns
-- Multiple versions of the same component existed across different files
-- No clear file naming or organization conventions
-- Component libraries weren't properly maintained or documented
-- Onboarding new designers took weeks as they learned the scattered system
+Since at the time our Design Operation department consisted of only one person, he had little time to spend looking at design documentation organisation. This meant that some teams were using location-based names or that the files of a single project could be split between many teams.
+
+---
+
+## Role
+
+As Product Design Lead, part of my role was to create and improve designer processes both before, during and after missions. Because we had to move extremely fast with Campaigns App (13 missions in 6 months), I became really interested in the most optimal way of defining what was currently live, what was being engineered, and what needed small improvements.
+
+---
+
+## Approach
+
+Since this project was touching every single designer in Pipedrive and would require quite some operational effort, we decided to start by defining a proper scope.
+
+There are three different levels that needed to be tackled:
+
+- How should the design organisation structure Figma on a high level (teams, projects)?
+- How should each product area organise Figma on a low level (files, components)?
+- How can we efficiently communicate designs overtime to multiple stakeholders?
+
+---
+
+## Solution
+
+### Figma teams and projects structure
+
+We started by creating an underlying set of Dos and Don'ts for team leaders to understand the logic behind the new proposed structure.
+
+| Dos | Don'ts |
+| --- | --- |
+| Use problem spaces for team names | Use location or feature names for team names |
+| Use the "Specs" project for what is 100% live after a mission has landed | Randomly mix mission and specs files |
+| Update the "Specs" file in the team where it belongs | Create multiple "Specs" files for the same feature in different teams |
+| Give project access only to stakeholders who actively need it | Give project access to anyone |
+| Remove access when stakeholders don't need it anymore (eg. change of tribe or role) | Leave permanent access to stakeholders regardless of organisational changes |
+
+#### Team level
+
+To organised our department properly, we started by defining teams and aligning the way projects were created among them. Here is a few examples:
+
+- Design system - public web
+- Design system - web app
+- Sales
+- Leads
+- Marketing
+- Settings
+- Billing
+- ...
+
+#### Project level
+
+One level down from teams in the file tree, we have projects. The most important part for us was to provide places where:
+
+- any stakeholder could find anything live in the product
+- team stakeholders could find tweaks needed to fix the live product
+- designers could express their creativity during projects
+- designers could have non project related explorations
+
+To meet reflect those needs, each team is structured with the following projects:
+
+- Specs: source of truth with what is 100 %live for users, open for to all company
+- Launchpad: contains launchpad tasks, open for team members
+- Playgrounds: contains non-mission related exploration, open to only designers
+- Mission projects: contains all mission related iterations, open to only mission members
 
 <Figure
-  src="/images/single-source-of-truth/before.png"
-  alt="Chaotic file structure"
-  caption="Our original file structure with scattered components and duplicates"
+  src="/images/single-source-of-truth/Team-structure-3.png"
+  alt=""
+  caption="The new Figma team and projects organisation"
 />
 
-## Research & Analysis
+### Figma file structure
 
-I conducted an audit of our entire Figma workspace and interviewed all designers to understand their pain points. The analysis revealed:
+Regarding file structure, we've interviewed stakeholders to understand what was needed for them to efficiently use design files. Based on our interview results, people needed to find:
 
-- Over 200 Figma files with unclear naming and purpose
-- Components were duplicated across 15+ files
-- 60% of designers reported spending significant time searching for assets
-- New designers took 2-3 weeks to understand the file structure
+- a feature main views
+- particular feature states
+- the feature functionalities
+- who is responsible for a particular feature designs
 
-## Solution Strategy
+To meet those needs, we created the following sections
 
-We implemented a structured approach based on atomic design principles and clear governance:
+- Masters: main feature views (usually filled state)
+- States: feature states (e.g. loading, empty, error, etc...)
+- Flows: feature prototypes (e.g. create item, delete item, duplicate item)
+- File thumbnails: name of file owner and problem space
 
-### File Architecture
-
-Created a hierarchical system with clear ownership and purpose:
-
-- **Foundation**: Colors, typography, spacing, icons
-- **Components**: Reusable UI components (buttons, inputs, cards)
-- **Patterns**: Composed patterns (forms, navigation, modals)
-- **Features**: Product-specific feature designs
-- **Exploration**: Sandbox for experimental work
+This section list is by no means exhaustive and different sections could be added as long as the four previously mentionned were present.
 
 <Figure
-  src="/images/single-source-of-truth/architecture.png"
-  alt="New file architecture diagram"
-  caption="Hierarchical file structure from foundations to features"
+  src="/images/single-source-of-truth/Specs-structure.png"
+  alt=""
+  caption="The new specs file structure"
 />
 
-### Naming Conventions
+---
 
-Established clear naming patterns:
+## Challenges
 
-- `[Type] - [Name] - [Status]`
-- Examples: `Component - Buttons - Live`, `Feature - Dashboard - In Progress`
-- Status labels: Live, In Progress, Archive, Exploration
+The main challenge presented itself during the project implementation. Pipedrive design department had felt the pain of switching design tools when moving from [Sketch](https://www.sketch.com/) to [Figma](https://www.figma.com/) the previous year. At the time not much attention had been put into structuring design teams and files so that the department could grow exponentially. This year, no one wanted to ask designers for extra operation work. But it has to be done and Design Leads formulated a plan to overcome any added friction.
 
-### Component Governance
+First, they organised a management workshop to get all Leads on the same page. Then, they got back to their respective teams and gave designers a full day to focus on reorganising their files. Designers weren't expected to finish everything in one day but had to finish the project over two months with a clear deadline.
 
-Implemented a component lifecycle:
-
-1. Propose new components in Exploration files
-2. Review with design team
-3. Add to Component library with documentation
-4. Deprecate old versions with migration guides
-
-<Figure
-  src="/images/single-source-of-truth/governance.png"
-  alt="Component governance workflow"
-  caption="Lifecycle for proposing, reviewing, and maintaining components"
-/>
-
-### Documentation
-
-Created comprehensive documentation in Notion:
-
-- File structure explanation and rationale
-- Naming convention guidelines
-- Component usage documentation
-- Onboarding checklist for new designers
-
-## Implementation
-
-Rolled out the new structure in phases:
-
-1. **Foundation Week**: Restructured core design tokens and base components
-2. **Migration Sprint**: Moved existing work into new structure
-3. **Team Training**: Workshop sessions on new conventions
-4. **Ongoing Maintenance**: Weekly component review sessions
+---
 
 ## Results
 
-The new structure transformed how the team collaborated:
+The teams in which this project was piloted gave a lot of positive feedback. They reported:
 
-- Time to find components reduced from 15 minutes to 2 minutes
-- Designer onboarding time reduced from 3 weeks to 3 days
-- Component duplication eliminated (200+ files consolidated to 40)
-- Design-to-development handoff improved with single source of truth
+- Easier to find latest version of a live feature
+- Being less scared of overriding master files during project ideation
+- Reduced time to create or update design files
 
-## Key Learnings
-
-- **Start with foundations**: Establishing clear base tokens (colors, typography) created consistency across all components
-- **Governance is critical**: Without clear ownership and processes, structure degrades quickly
-- **Documentation matters**: Written guidelines were essential for maintaining consistency as the team grew
-- **Involve the team**: Getting buy-in early through workshops made adoption much smoother
+It was quite fun to work on this project because it was the first time I worked on design ops related topic at that scale. I had to collaborate with multiple Leads and Designers and I was able to test it and tweak it with Designers from my own team.

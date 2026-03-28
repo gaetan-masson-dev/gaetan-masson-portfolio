@@ -1,198 +1,123 @@
 ---
-title: Settings and Configurations
+title: Settings and configurations
 category: Information architecture
 description: Remodelling a settings information architecture so that users can easily configure an app to fit their needs
-role: Product Designer
-duration: 4 months
-team: 2 designers, 4 developers, 1 researcher
-scope: Information architecture, interaction design, documentation
-focus: Findability, mental models, progressive complexity
-image: /images/settings-configurations/settings-navigation.png
+role: Product Designer Team Lead
+duration: 3 Months
+team: 1 Product Manager, 5 Engineers
+logo: /images/settings-configurations/pipedrive_logo-1.svg
+image: /images/settings-configurations/Settings.png
 ---
 
-## Overview
+## Summary
 
-A B2B SaaS application had accumulated settings organically over 4 years, resulting in a chaotic settings area with over 200 configuration options scattered across multiple pages. Users couldn't find settings they needed, and onboarding required extensive training.
+When products get more and more complex, things can progressively get out of hand. In 2018 we had been adding complexity to our product for more than 10 years. After spending a year shipping cool features and improvements, I could feel an issue growing and I started asking:
 
-## The Problem
+How can we start making sense of our settings and configurations?
 
-The settings area had become a significant pain point:
+---
 
-- 200+ settings distributed across 15 different pages
-- No clear logic to the organization (chronological, not logical)
-- New features added settings wherever convenient for developers
-- Users needed 30+ minutes to configure basic setup
-- Support tickets about "where is X setting" were the most common inquiry
-- Enterprise customers required dedicated onboarding sessions just for configuration
+## Problem
+
+Over the years, every product organically becomes more complex. New features are added and users need to configure them. For example in Pipedrive's case, new users needed to get their pipelines matching their sales processes, invite their colleagues or link Pipedrive with their existing tools. It happens sometimes that whole features such as security ones are app configurations.
 
 <Figure
-  src="/images/settings-configurations/before-ia.png"
-  alt="Original settings navigation structure"
-  caption="The original sprawling settings structure with unclear organization"
+  src="/images/settings-configurations/teams.png"
+  alt=""
+  caption="Settings left menu was getting out hand with more than 20 items"
 />
 
-## Research & Discovery
+In 2017, over the course of one year, Pipedrive added more than 10 new features to its web app and increased functionalities of many existing ones. The settings menu jumped from 10 to 25 items. This huge section of the product was getting cluttered and unusable. Since research showed that trial users who would configure Pipedrive to suit their needs were 60% more likely to convert to paying customers, we decided to tackle this issue.
 
-We conducted comprehensive research to understand how users thought about configuration:
+---
 
-### Card Sorting
+## Role
 
-Ran card sorting sessions with 20 users across different roles (admins, managers, end users):
+From my first day at Pipedrive, I worked on features related to ecosystem (app marketplace), configurations (billing, user management) and product marketing (in-app upselling). One of my major skills is breaking down complicated problems into actionable items while managing stakeholders expectations. Because this issue had consistently impacted my work, I was eager to focus on this design problem.
 
-- Participants organized 200 settings into groups that made sense to them
-- Revealed strong patterns around task-based groupings
-- Showed that user roles affected how they mentally organized settings
+As Lead Product Designer for this project, I had to interact with more than 13 different product teams. I had to make sure that we would meet their requirements, keep legacy features functional and allow users to achieve a variety of goals.
 
-### User Interviews
+---
 
-Interviewed 15 administrators about their configuration workflows:
+## Approach
 
-- Most referred to documentation constantly
-- Common settings were buried deep in hierarchy
-- No way to customize which settings were easily accessible
-- Uncertainty about which settings affected what parts of the app
-
-### Analytics
-
-Analyzed settings usage data:
-
-- 20% of settings accounted for 80% of configuration activity
-- Users frequently bounced between multiple settings pages
-- Search feature (buried in interface) was heavily used when found
-- Mobile access to settings was attempted but mostly abandoned
+Most of Pipedrive's features have some kind of configuration page and some features, such as workflow automation, are located in settings. With more than 50 unique views, the settings section was at the time the largest of the product. We decided to step back and analyse where we were starting from and what would be the right information architecture.
 
 <Figure
-  src="/images/settings-configurations/research-data.png"
-  alt="Research synthesis and patterns"
-  caption="Card sorting results showing clear task-based groupings"
+  src="/images/settings-configurations/Settings-map-vertical-1.png"
+  alt=""
+  caption="Settings represented more than 70% of Pipedrive"
 />
 
-## Design Strategy
+We started by creating a product map for the whole app to visualise its current state. This map made us realise the extent of the problem: there was no logical information architecture in place. To make sense of this, we decided to proceed with an open card sorting exercise.
 
-Based on research, we established a new approach:
+<Figure
+  src="/images/settings-configurations/settings_groups_dendro_2018-10-29-1.png"
+  alt=""
+  caption="Open card sorting results"
+/>
 
-### Task-Based Organization
+We listed all actions a user could take in settings and assigned each one to a card. We conducted one on one interviews where we asked users to logically group all our cards. Upon completion, they labelled each group based on its content. After reviewing the results, we sat with our stakeholders to group all our configuration options into sections and subsections.
 
-Reorganized settings around user tasks rather than system architecture:
+<Figure
+  src="/images/settings-configurations/settings-map-proposal.png"
+  alt=""
+  caption="The proposed settings information architecture"
+/>
 
-- **Getting Started**: Essential settings for initial setup
-- **Team & Access**: User management, roles, permissions
-- **Workspace**: Organization, projects, workflow customization
-- **Integrations**: Third-party tools and data connections
-- **Billing & Plans**: Subscription, usage, invoicing
-- **Security & Compliance**: Authentication, data policies, audit logs
-- **Preferences**: Personal settings and notifications
+From there I build a Vue.js prototype to test and iterate on different grouping and UI approaches. At that point, we had many questions to answer:
 
-### Progressive Disclosure
+- Would it be better to have a feature configuration inline (sitting in the feature itself) or sitting in settings?
+- How will users discover a feature or a global setting?
+- Should settings be managed by each individual team and how can everything stay aligned?
 
-Implemented tiered access to complexity:
+Instead of imposing rigid processes or constraints to our product teams, we decided to create a framework where each team could implement their own settings. We would still be there to check that everything would be aligned and we would be available to advise teams when they had to create new settings views.
 
-- Most common settings visible at top level
-- Advanced options collapsed by default with clear labels
-- Dangerous settings (data deletion, etc.) behind confirmation flows
-- Role-based visibility (admins see security, users see preferences)
-
-### Search & Quick Access
-
-Made findability a first-class concern:
-
-- Prominent search with keyword and natural language support
-- "Recently accessed" section for quick return to common settings
-- Favorites/bookmarks for user-specific frequent settings
-- Deep linking to specific settings for documentation and support
+---
 
 ## Solution
 
-### New Information Architecture
+After testing 7 different iterations, we settled on one which fitted our user mental model and our product requirements. We defined four buckets:
 
-Created a focused, task-oriented structure:
+- Settings
+- Billing
+- Tools and Integrations
+- Workflow automation
 
-<Figure
-  src="/images/settings-configurations/new-ia.png"
-  alt="Redesigned settings structure"
-  caption="New task-based information architecture with clear categories"
-/>
-
-### Settings Dashboard
-
-Designed an overview that surfaced important information:
-
-- Setup progress for new accounts
-- Quick access to most common settings
-- Status indicators for important configurations
-- Recent changes log for accountability
+We decided to bring some configurations out of settings and treat them as features. We also encouraged product managers and product designers to use in situ configurations whenever appropriate so that users could instantly see changes without having to move out and back to the feature.
 
 <Figure
-  src="/images/settings-configurations/dashboard.png"
-  alt="Settings dashboard interface"
-  caption="Dashboard providing overview and quick access to key settings"
+  src="/images/settings-configurations/Settings.png"
+  alt=""
+  caption="The new settings navigation UI"
 />
 
-### Individual Settings Pages
+Since I have left Pipedrive the solution has kept on evolving. The main navigation was redesigned which in turn modified settings information architecture further. Because of our new settings framework, designers and product managers have already made use of the solid foundations we created.
 
-Standardized page layout:
+---
 
-- Clear heading with description of what the page controls
-- Visual grouping of related settings
-- Help text for complex options
-- Impact indicators (who/what this affects)
-- Save confirmation with clear feedback
+## Challenges
 
-<Figure
-  src="/images/settings-configurations/settings-page.png"
-  alt="Individual settings page layout"
-  caption="Consistent layout pattern for settings pages with clear grouping"
-/>
+The greatest challenge in this project was to define ownership and manage expectations. This project involved 13 different teams across 3 offices. We could say that the settings section was owned by everyone and by no one at the same time. It has been developed for 10 years and had a life of its own. I remember when we started looking at it all and told each other: "All right, where the hell do we start?" Everyone wanted changes to happen but no one had time to work on it.
 
-### Contextual Settings
+Those challenges were met with a passion for creating awesome products and improving our users' lives. All teams got behind us and slowly but surely we managed to bring this project from a coffee break chat to a full-blown adventure where people felt empowered.
 
-Added ability to access relevant settings in context:
-
-- "Settings" link in workspace header goes to workspace settings
-- "Configure" options directly in features that need setup
-- Inline setting adjustments where appropriate
-
-## Documentation & Onboarding
-
-Created supporting resources:
-
-- Onboarding checklist guiding through essential settings
-- Interactive tooltips explaining impact of changes
-- Documentation linked from each settings page
-- Video walkthroughs for complex configurations
-
-## Testing & Validation
-
-Conducted usability testing with 12 participants:
-
-### Initial Testing
-
-- Task completion rate: 85% (up from 45%)
-- Time to find specific setting: 30 seconds (down from 5+ minutes)
-- Users successfully completed configuration without external help
-
-### Iteration Based on Feedback
-
-- Added breadcrumbs for better navigation hierarchy
-- Made search more prominent in mobile view
-- Added "Related settings" suggestions
-- Improved help text based on common confusion points
+---
 
 ## Results
 
-The restructured settings dramatically improved user experience:
+The project delivery was really well received. We successfully created a framework for all product teams to work with feature configurations. Obviously, this is an ongoing project. Existing and new features configurations will need configurations. Our proposed solution paved the way for the new navigation redesign and the creation of a product team dedicated to settings and configuration.
 
-- Support tickets about finding settings decreased by 82%
-- Time to complete initial setup reduced from 30+ minutes to 8 minutes
-- Enterprise onboarding time reduced from 2 hours to 30 minutes
-- Settings search usage increased by 340% (after making it prominent)
-- User satisfaction scores for configuration increased from 2.1/5 to 4.3/5
+<Figure
+  src="/images/settings-configurations/New-settings.png"
+  alt=""
+  caption="Latest version of Pipedrive settings made possible by our framework"
+/>
 
-## Key Learnings
+## Learnings
 
-- **Mental models over system architecture**: Organizing around user tasks rather than technical implementation made settings intuitive
-- **Not all settings are equal**: Surfacing common settings and hiding advanced options reduced overwhelm
-- **Findability is critical**: Search isn't optional when you have 200+ settings
-- **Context matters**: Letting users access settings where they work reduced friction significantly
-- **Progressive complexity**: Start simple, reveal advanced options when needed
-- **Document as you design**: Help text and documentation needed to be part of the design, not an afterthought
+There were so many different learnings during this project that I'm not sure where to start. First it was a really great adventure. I got to work with every single product manager and designer or Pipedrive. I improved a lot regarding communication and managing stakeholders' expectations.
+
+Secondly we really saw the value for a designer to be able to code simple prototypes and get them tested. This allowed us to easily share our progress with other stakeholders and get support from everyone involved.
+
+Finally, I learned that there is no right or wrong time to start a project. If something really interests and triggers you but no one seems to care and pay attention, start working on it a few hours a week, slowly get your management to see the value and at some point, it might become a company priority.
