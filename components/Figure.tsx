@@ -10,15 +10,11 @@ interface FigureProps {
 
 export default function Figure({ src, alt, caption, width = 1200, height = 800 }: FigureProps) {
   return (
-    <figure className="figure">
-      <Image
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        className="figure-image"
-      />
-      {caption && <figcaption className="figure-caption">{caption}</figcaption>}
+    <figure className="my-12">
+      <Image src={src} alt={alt} width={width} height={height} className="w-full h-auto rounded" />
+      {caption && (
+        <figcaption className="mt-4 text-sm text-text-light text-center">{caption}</figcaption>
+      )}
     </figure>
   )
 }

@@ -9,34 +9,32 @@ interface CaseStudyLayoutProps {
 
 export default function CaseStudyLayout({ frontmatter, children }: CaseStudyLayoutProps) {
   return (
-    <article className="case-study">
-      <header className="case-study-header">
-        <h1 className="case-study-title">{frontmatter.title}</h1>
-        
-        <div className="case-study-context">
-          <div className="context-item">
-            <strong>Role:</strong> {frontmatter.role}
+    <article className="mb-16">
+      <header className="mb-12">
+        <h1 className="text-5xl md:text-6xl font-semibold">{frontmatter.title}</h1>
+
+        <div className="grid gap-4 p-8 bg-gray-50 rounded-lg mb-12 mt-8">
+          <div className="text-[0.9375rem]">
+            <strong className="font-semibold mr-2">Role:</strong> {frontmatter.role}
           </div>
-          <div className="context-item">
-            <strong>Duration:</strong> {frontmatter.duration}
+          <div className="text-[0.9375rem]">
+            <strong className="font-semibold mr-2">Duration:</strong> {frontmatter.duration}
           </div>
-          <div className="context-item">
-            <strong>Team:</strong> {frontmatter.team}
+          <div className="text-[0.9375rem]">
+            <strong className="font-semibold mr-2">Team:</strong> {frontmatter.team}
           </div>
-          <div className="context-item">
-            <strong>Scope:</strong> {frontmatter.scope}
+          <div className="text-[0.9375rem]">
+            <strong className="font-semibold mr-2">Scope:</strong> {frontmatter.scope}
           </div>
           {frontmatter.focus && (
-            <div className="context-item">
-              <strong>Focus:</strong> {frontmatter.focus}
+            <div className="text-[0.9375rem]">
+              <strong className="font-semibold mr-2">Focus:</strong> {frontmatter.focus}
             </div>
           )}
         </div>
       </header>
 
-      <div className="case-study-content">
-        {children}
-      </div>
+      <div className="max-w-content">{children}</div>
     </article>
   )
 }
