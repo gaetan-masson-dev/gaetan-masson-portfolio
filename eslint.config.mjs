@@ -1,58 +1,47 @@
-import js from '@eslint/js'
-import nextPlugin from '@next/eslint-plugin-next'
-import prettierConfig from 'eslint-config-prettier'
+import nextCoreWebVitals from 'eslint-config-next/core-web-vitals'
+import nextTypeScript from 'eslint-config-next/typescript'
+import eslintConfigPrettier from 'eslint-config-prettier/flat'
 import perfectionist from 'eslint-plugin-perfectionist'
-import reactPlugin from 'eslint-plugin-react'
-import hooksPlugin from 'eslint-plugin-react-hooks'
-import globals from 'globals'
 import ts from 'typescript-eslint'
 
-export default ts.config(
-  // Global ignores
+// Next.js 16 ships ESLint flat config — no FlatCompat. See:
+// https://nextjs.org/docs/app/api-reference/config/eslint
+const eslintConfig = [
   {
-    ignores: ['.next/**', 'node_modules/**', 'public/**', 'next-env.d.ts'],
+    ignores: [
+      '.next/**',
+      'node_modules/**',
+      'out/**',
+      'build/**',
+      'dist/**',
+      'next-env.d.ts',
+      'public/**',
+      '.cursor/**',
+      '.git/**',
+      '.husky/**',
+      'thoughts/**',
+      'coverage/**',
+    ],
   },
-
-  // Base configuration
-  js.configs.recommended,
-  ...ts.configs.recommended,
+  ...nextCoreWebVitals,
+  ...nextTypeScript,
+  eslintConfigPrettier,
   ...ts.configs.stylistic,
-
-  // Plugins and specific rules
   {
-    files: ['**/*.{js,jsx,ts,tsx,mjs}'],
-    plugins: {
-      '@next/next': nextPlugin,
-      react: reactPlugin,
-      'react-hooks': hooksPlugin,
-      perfectionist: perfectionist,
-    },
-    settings: {
-      react: {
-        version: 'detect',
-      },
-    },
-    languageOptions: {
-      globals: {
-        ...globals.browser,
-        ...globals.node,
-        ...globals.es2021,
-      },
-    },
     rules: {
-      ...nextPlugin.configs.recommended.rules,
-      ...nextPlugin.configs['core-web-vitals'].rules,
-      ...reactPlugin.configs.recommended.rules,
-      ...hooksPlugin.configs.recommended.rules,
-
-      // Modern replacements for Airbnb strictness
       'react/react-in-jsx-scope': 'off',
       'react/prop-types': 'off',
       'react/no-unescaped-entities': 'off',
       '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
       '@typescript-eslint/no-explicit-any': 'warn',
-
-      // Perfectionist plugin - Keeps your imports sorted automatically
+    },
+  },
+  {
+    files: ['**/*.{js,jsx,ts,tsx,mjs}'],
+    plugins: {
+      perfectionist,
+    },
+    rules: {
       'perfectionist/sort-imports': [
         'error',
         {
@@ -71,7 +60,6 @@ export default ts.config(
       ],
     },
   },
+]
 
-  // Prettier must be last to override any conflicting rules
-  prettierConfig
-)
+export default eslintConfig
