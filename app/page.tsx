@@ -14,10 +14,8 @@ export default function HomePage() {
   return (
     <div className="max-w-7xl mx-auto px-6">
       <section className="border-b border-line pt-32 pb-32">
-        <h1 className="text-[3.5rem] md:text-[4.5rem] leading-tight font-semibold mb-6">
-          Hi, I'm Gaetan!
-        </h1>
-        <p className="text-xl text-subtle">
+        <h1 className="text-2xl md:text-7xl leading-tight mb-6">Hi, I'm Gaetan!</h1>
+        <p className="text-xl md:text-2xl text-subtle">
           Lead Product Designer specializing in complex SaaS products, systems thinking, and
           cross-functional collaboration.
           <br />
@@ -49,12 +47,12 @@ export default function HomePage() {
                   <div className="inline-block text-xs uppercase tracking-[0.08em] font-medium text-subtle mb-2">
                     {caseStudy.frontmatter.category}
                   </div>
-                  <h2 className="text-[1.75rem] font-semibold mt-0 mb-3">
+                  <h2 className="mt-0 mb-3">
                     <Link href={`/work/${caseStudy.slug}`} className={caseStudyTitleLinkClass}>
                       {caseStudy.frontmatter.title}
                     </Link>
                   </h2>
-                  <p className="text-subtle max-w-measure mb-6">
+                  <p className="max-w-reading text-subtle mb-6">
                     {caseStudy.frontmatter.description}
                   </p>
                   <Link
