@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="max-w-7xl mx-auto px-6 py-16">
-      <div className="mx-auto max-w-measure">
-        <h1>About</h1>
+      <div className="mx-auto max-w-reading">
+        <h1 className="text-[3.5rem] md:text-[4.5rem] leading-tight">About</h1>
 
         <p>
           Hi, I'm Gaetan Masson, a product designer passionate about creating thoughtful digital
