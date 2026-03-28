@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 
 import EmailProtected from '@/components/EmailProtected'
 import { linkTextClass } from '@/lib/link-styles'
+import { protectedEmail } from '@/lib/protected-email'
 
 export const metadata: Metadata = {
   title: 'Contact - Gaetan Masson',
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="max-w-7xl mx-auto px-6">
+    <div className="max-w-7xl mx-auto px-6 py-16">
       <div className="mx-auto max-w-measure">
         <h1>Contact</h1>
 
@@ -25,7 +26,12 @@ export default function ContactPage() {
           <div>
             <strong className="block text-lg mb-2">Email</strong>
             <p>
-              <EmailProtected user="hello" domain="gaetanmasson.me" className={linkTextClass} />
+              <EmailProtected
+                user={protectedEmail.user}
+                domain={protectedEmail.domain}
+                label="Send me an email"
+                className={linkTextClass}
+              />
             </p>
           </div>
 
@@ -38,7 +44,7 @@ export default function ContactPage() {
                 rel="noopener noreferrer"
                 className={linkTextClass}
               >
-                LinkedIn
+                View my LinkedIn profile
               </a>
             </p>
           </div>

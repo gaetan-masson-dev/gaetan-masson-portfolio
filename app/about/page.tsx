@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
 
+import EmailProtected from '@/components/EmailProtected'
+import { protectedEmail } from '@/lib/protected-email'
+
 export const metadata: Metadata = {
   title: 'About - Gaetan Masson',
   description: 'Learn more about Gaetan Masson, product designer.',
@@ -7,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="max-w-7xl mx-auto px-6">
+    <div className="max-w-7xl mx-auto px-6 py-16">
       <div className="mx-auto max-w-measure">
         <h1>About</h1>
 
@@ -39,8 +42,9 @@ export default function AboutPage() {
 
         <p>
           I'm always interested in discussing design, technology, or collaborating on meaningful
-          projects. Feel free to reach out via <a href="mailto:hello@gaetanmasson.me">email</a> or
-          connect with me on{' '}
+          projects. Feel free to reach out via{' '}
+          <EmailProtected user={protectedEmail.user} domain={protectedEmail.domain} label="email" />{' '}
+          or connect with me on{' '}
           <a
             href="https://www.linkedin.com/in/gaetan-masson-design"
             target="_blank"

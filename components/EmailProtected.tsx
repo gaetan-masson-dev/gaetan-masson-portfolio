@@ -1,28 +1,31 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import type { MouseEvent } from 'react'
 
 interface EmailProtectedProps {
-  user: string
-  domain: string
+  user: readonly number[]
+  domain: readonly number[]
   label?: string
   className?: string
 }
 
+function decodeEmailPart(encodedPart: readonly number[]): string {
+  return String.fromCharCode(...encodedPart)
+}
+
 export default function EmailProtected({ user, domain, label, className }: EmailProtectedProps) {
-  const [email, setEmail] = useState<string | null>(null)
+  const linkClassName = className ?? undefined
 
-  useEffect(() => {
-    setEmail(`${user}@${domain}`)
-  }, [user, domain])
+  function handleClick(event: MouseEvent<HTMLAnchorElement>) {
+    event.preventDefault()
 
-  if (!email) {
-    return <span className={className}>{label || `${user} [at] ${domain}`}</span>
+    const email = `${decodeEmailPart(user)}@${decodeEmailPart(domain)}`
+    window.location.href = `mailto:${email}`
   }
 
   return (
-    <a href={`mailto:${email}`} className={className}>
-      {label || email}
+    <a href="#" className={linkClassName} onClick={handleClick}>
+      {label || 'Reveal email'}
     </a>
   )
 }
