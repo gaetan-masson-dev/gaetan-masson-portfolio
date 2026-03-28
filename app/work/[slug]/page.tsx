@@ -2,9 +2,11 @@ import type { Metadata } from 'next'
 
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { notFound } from 'next/navigation'
+import remarkGfm from 'remark-gfm'
 
 import CaseStudyLayout from '@/components/CaseStudyLayout'
 import Figure from '@/components/Figure'
+import MDXAnchor from '@/components/MDXAnchor'
 import { getCaseStudy, getCaseStudies } from '@/lib/mdx'
 
 interface CaseStudyPageProps {
@@ -39,6 +41,7 @@ export async function generateMetadata({ params }: CaseStudyPageProps): Promise<
 
 const components = {
   Figure,
+  a: MDXAnchor,
 }
 
 export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
@@ -52,7 +55,15 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   return (
     <div className="max-w-7xl mx-auto px-6">
       <CaseStudyLayout frontmatter={caseStudy.frontmatter}>
-        <MDXRemote source={caseStudy.content} components={components} />
+        <MDXRemote
+          source={caseStudy.content}
+          components={components}
+          options={{
+            mdxOptions: {
+              remarkPlugins: [remarkGfm],
+            },
+          }}
+        />
       </CaseStudyLayout>
     </div>
   )

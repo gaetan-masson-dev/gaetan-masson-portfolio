@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 
 import { Source_Sans_3, Source_Serif_4 } from 'next/font/google'
-import Link from 'next/link'
 
 import SiteFooter from '@/components/SiteFooter'
+import SiteHeader from '@/components/SiteHeader'
 
 import '@/styles/globals.css'
 
@@ -37,30 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${sourceSans.variable} ${sourceSerif.variable}`}>
       <body>
-        <header className="border-b border-line py-8 mb-12 max-w-7xl mx-auto">
-          <div className="max-w-wide mx-auto px-6 flex justify-between items-center flex-col md:flex-row gap-6 md:items-center">
-            <Link
-              href="/"
-              className="text-lg font-semibold text-default no-underline hover:no-underline"
-            >
-              Gaetan Masson
-            </Link>
-            <nav className="flex gap-8">
-              <Link href="/" className="text-default font-medium no-underline hover:underline">
-                Work
-              </Link>
-              <Link href="/about" className="text-default font-medium no-underline hover:underline">
-                About
-              </Link>
-              <Link
-                href="/contact"
-                className="text-default font-medium no-underline hover:underline"
-              >
-                Contact
-              </Link>
-            </nav>
-          </div>
-        </header>
+        <SiteHeader />
 
         <main>{children}</main>
 

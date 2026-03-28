@@ -13,11 +13,10 @@ export interface CaseStudyFrontmatter {
   title: string
   category: string
   description: string
-  role: string
-  duration: string
-  team: string
+  contribution?: string
   scope?: string
-  focus?: string
+  context?: string
+  impact?: string
   logo?: string
   image?: string
   imageWidth?: number
