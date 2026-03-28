@@ -1,0 +1,26 @@
+import Image from 'next/image'
+
+interface FigureProps {
+  src: string
+  alt: string
+  caption?: string
+  width?: number
+  height?: number
+}
+
+export default function Figure({ src, alt, caption, width = 1200, height = 800 }: FigureProps) {
+  return (
+    <figure className="my-12">
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className="h-auto w-full shadow-[0_18px_45px_rgba(26,26,26,0.12)]"
+      />
+      {caption && (
+        <figcaption className="mt-4 text-sm text-subtle text-center">{caption}</figcaption>
+      )}
+    </figure>
+  )
+}

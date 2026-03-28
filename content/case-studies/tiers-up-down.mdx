@@ -1,0 +1,110 @@
+---
+title: Tiers up and down
+category: UX Strategy
+description: Improving features discovery and creating account upgrade flows to increase growth and revenue
+contribution: Led pricing tier UX and upgrade flows
+scope: Growth & monetization redesign
+context: Legacy billing system (monolith constraints)
+impact: Gold tier adoption increased from 9% -> 47%
+logo: /images/tiers-up-down/pipedrive_logo-1.svg
+image: /images/tiers-up-down/Tiers.png
+---
+
+## Summary
+
+As Pipedrive's product matured and the feature set expanded, the company needed to better communicate the value of its different subscription tiers and encourage sustainable revenue growth.
+
+At the time, the majority of users remained on the lowest tier despite the availability of higher-value features. The challenge was not only to improve feature discoverability, but also to help users understand the value of each tier and upgrade their subscriptions within the constraints of a legacy billing system.
+
+---
+
+## My role
+
+I joined the project as Lead Product Designer within a cross-functional product marketing and engineering team. My role focused on researching feature discoverability, defining upgrade pathways, and coordinating delivery across multiple teams responsible for implementing tier-related marketing and product surfaces.
+
+---
+
+## Problem
+
+Pipedrive offered a 14-day free trial followed by three subscription tiers: Silver, Gold, and Platinum. However, nearly 90% of users remained on the Silver tier, while higher tiers provided only marginally differentiated value beyond a few key features such as Email Inbox.
+
+In practice, the Platinum tier functioned more as a pricing anchor than a genuinely adopted plan, which limited both user progression and revenue growth.
+
+<Figure
+  src="/images/tiers-up-down/old-modal.png"
+  alt=""
+  caption="The only way of upgrading an account was through the old pricing modal. It was only accessible from the billing view and had CTAs placed below the fold."
+/>
+
+## Approach
+
+To better scope the problem, we first reframed it into clear, actionable product questions rather than isolated UX issues.
+
+This led to two core questions:
+
+- How can users better discover the value of higher-tier features?
+- How can upgrades be made clearer and more accessible within the product experience?
+
+The first workstream focused on discoverability and value communication, explored in close collaboration with the Product Marketing team. Early findings showed that trial users often struggled to understand their current pricing tier and the value associated with higher-tier features.
+
+The second workstream focused on upgrade feasibility and was tackled together with the Sales and Billing teams. The billing system was one of the oldest legacy components still in production, significantly constraining engineering options and requiring a pragmatic solution that could be delivered within tight timelines.
+
+<Figure
+  src="/images/tiers-up-down/Deal-view-gold.png"
+  alt=""
+  caption="Trial users often struggled to identify their current pricing tier and available features"
+/>
+
+## Key Design Decisions
+
+To improve higher-tier feature discoverability, we first made gated features visible directly within the product navigation by adding subtle icons next to their labels. Previously, users on lower tiers were completely blocked from these features and often unaware of their existence.
+
+To complement this visibility, we introduced contextual empty states for gated features. Once users discovered a feature, the empty state provided a concise explanation of its functionality, a UI preview, and a clear upgrade call to action. Each empty state was designed in collaboration with the designer owning the feature and implemented by the respective product team to ensure consistency and accuracy.
+
+<Figure
+  src="/images/tiers-up-down/Scheduling-teaser.png"
+  alt=""
+  caption="We added a subtle icon next to feature labels and created custom empty states for each feature tied to a higher pricing tier"
+/>
+
+In parallel, we designed a global tier comparison modal accessible from multiple entry points across the product. The goal was to help users understand the value of each subscription tier without overwhelming them with a long list of features. Instead of replicating the marketing website structure, we focused on clear pricing, tier-specific features, and prominent upgrade CTAs to support faster decision-making.
+
+Finally, we improved trial transparency by introducing tier badges in the top bar for trial users. The badge provided immediate visibility into the user's current tier and remaining trial duration, while also serving as a direct entry point to the billing modal. This helped users better plan their trial usage and increased clarity around pricing and tier progression, especially after extending the trial length to 14 days and adjusting tier pricing.
+
+<Figure
+  src="/images/tiers-up-down/Modal.png"
+  alt=""
+  caption="The redesigned modal clarified pricing and moved CTAs above the fold"
+/>
+
+---
+
+## Constraints & tradeoffs
+
+The primary constraint throughout the project was the legacy billing infrastructure, which remained part of a monolithic PHP codebase and had not yet been migrated to a microservices architecture. This significantly limited the range of UX improvements we could implement in the subscription flow and directly influenced the decision to use a modal-based upgrade experience rather than a fully redesigned checkout journey.
+
+Another challenge was coordinating the implementation of meaningful empty states across multiple product teams. The tier relaunch required several features to be ready simultaneously, which created strong delivery pressure and competing priorities. Ensuring consistent messaging and timely implementation required continuous stakeholder alignment and cross-team coordination.
+
+Finally, we had to carefully balance product growth objectives with user trust. While internal analysis showed that the Gold tier provided the strongest value proposition, the goal was not to introduce aggressive upsell patterns. Instead, we focused on transparent communication of tier value and contextual upgrade prompts, allowing users to make informed decisions without feeling pressured.
+
+---
+
+## Results
+
+The impact of the tier revamp could be directly evaluated through subscription and conversion metrics over a three-month period following launch.
+
+The data showed a significant shift in tier adoption. Gold tier conversion increased from 9% to 47% of trial users, while Platinum tier conversion rose from 1% to 5%. These results suggested that improved feature discoverability, clearer value communication, and more transparent upgrade pathways helped users better understand the value of higher-tier plans.
+
+However, we also observed a decrease in the overall trial-to-paying customer conversion rate. This outcome was anticipated to some extent, as the tier revamp included higher subscription pricing and placed trial users on the Gold tier by default, increasing the commitment required at the point of conversion.
+
+Following this observation, we initiated further analysis and iteration to better understand user drop-off patterns and refine the balance between pricing strategy, perceived value, and conversion performance.
+
+---
+
+## Learnings
+
+This project reinforced the importance of early stakeholder alignment and clear goal setting in complex, cross-functional initiatives. Establishing a shared understanding of objectives, constraints, and available resources from the outset proved essential to securing long-term buy-in across teams.
+
+It also highlighted the impact of legacy systems and engineering limitations on design feasibility. While initial solutions were designed for ideal user flows, technical realities revealed that some implementations would require 6 to 9 months of development, while the project timeline allowed for only 3 months.
+
+This led to a necessary reframing of the design approach, prioritising pragmatic solutions that could operate within existing constraints rather than pursuing optimal but unrealistic flows. The experience strengthened my ability to balance product ambition, technical feasibility, and delivery timelines in real-world product environments.

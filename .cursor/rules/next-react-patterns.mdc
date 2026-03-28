@@ -1,0 +1,28 @@
+---
+description: Patterns for Next.js and React implementation
+globs: app/**/*.{ts,tsx}
+alwaysApply: false
+---
+
+# Next.js & React Patterns
+
+## App Router
+- Use the `app/` directory exclusively.
+- Use `page.tsx` for route components and `layout.tsx` for shared layouts.
+- Use `generateMetadata` for dynamic page SEO.
+- Use `generateStaticParams` for pre-rendering dynamic routes (like case studies).
+
+## React Server Components (RSC)
+- Prefer Server Components by default.
+- Only use `'use client'` for components that require:
+  - Event listeners (onClick, etc.)
+  - State (`useState`, `useReducer`)
+  - Effects (`useEffect`)
+  - Browser APIs (localStorage, etc.)
+
+## Navigation
+- Use the Next.js `<Link>` component for all internal navigation.
+
+## Component Organization
+- Place reusable UI components in `components/`.
+- Keep components small and focused on a single responsibility.

@@ -1,0 +1,30 @@
+---
+description: Linting and formatting rules for the project
+globs: **/*.{js,jsx,ts,tsx,json,css,md,mdx}
+alwaysApply: false
+---
+
+# Linting & Formatting
+
+## ESLint (Flat Config)
+- **Config**: `eslint.config.mjs` (ESLint 9 Flat Config).
+- **Import Sorting**: Handled by `eslint-plugin-perfectionist`. Do not manually sort imports.
+- **Workflow**: Linting is mandatory. Fix linting errors manually before committing. No auto-fix on commit.
+
+## Prettier
+- **Config**: `.prettierrc`.
+- **Workflow**: Format on save is enabled in the IDE.
+
+## Common Linting Overrides
+- `react/react-in-jsx-scope`: Off (Next.js handles this).
+- `react/no-unescaped-entities`: Off (to allow apostrophes in text).
+- `@typescript-eslint/no-unused-vars`: Warn (with `_` ignore pattern).
+
+## Import Order (Perfectionist)
+Imports are automatically sorted in this order:
+1. Types
+2. Built-in (fs, path, etc.)
+3. External (react, next, etc.)
+4. Internal (@/*)
+5. Parent/Sibling
+6. Side-effects

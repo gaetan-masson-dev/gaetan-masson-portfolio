@@ -1,0 +1,16 @@
+---
+description: Standards for Git commits and version control
+alwaysApply: true
+---
+
+# Git Standards
+
+## Commit Messages
+- **Concise**: Keep commit messages short and focused. One line is preferred unless the change is highly complex.
+- **No Self-Tagging**: Do not include "Co-authored-by" or any other mentions of the AI in the commit message.
+- **Style**: Use the imperative mood (e.g., "Add contact page" instead of "Added contact page").
+
+## Workflow
+- Only commit when explicitly asked by the user.
+- Group related changes into a single commit.
+- Do not use verbose bullet points in commit messages unless requested.
