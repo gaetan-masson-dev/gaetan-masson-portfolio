@@ -56,7 +56,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 │   ├── layout.tsx           # Root layout with header/footer
 │   ├── page.tsx             # Home page
 │   ├── about/               # About page
-│   └── case-studies/[slug]/ # Dynamic case study pages
+│   └── work/[slug]/         # Dynamic case study pages (URLs: /work/:slug)
 ├── components/              # React components
 │   ├── Figure.tsx          # Image component for MDX
 │   └── CaseStudyLayout.tsx # Case study template
@@ -137,7 +137,7 @@ Update SEO metadata in:
 
 - `app/layout.tsx` - Site-wide defaults
 - `app/about/page.tsx` - About page metadata
-- `app/case-studies/[slug]/page.tsx` - Case study metadata
+- `app/work/[slug]/page.tsx` - Case study pages and metadata
 
 ## License
 
