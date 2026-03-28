@@ -66,13 +66,11 @@ export default function SiteFooter() {
             </a>
             <FooterSeparator />
             <a
-              href="/cv.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/resume_gaetan_masson2026.pdf"
+              download="resume_gaetan_masson2026.pdf"
               className={footerLinkClass}
-              title="CV Gaetan Masson"
             >
-              CV Gaetan Masson - 2024
+              Resume
             </a>
           </div>
         </div>
