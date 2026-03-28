@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { Source_Sans_3, Source_Serif_4 } from 'next/font/google'
 import Link from 'next/link'
 
-import EmailProtected from '@/components/EmailProtected'
+import SiteFooter from '@/components/SiteFooter'
 
 import '@/styles/globals.css'
 
@@ -64,34 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <main>{children}</main>
 
-        <footer className="mt-16 py-12 border-t border-line text-subtle text-sm">
-          <div className="max-w-wide mx-auto px-6">
-            <p className="mb-6">
-              I'm currently designing for a German ed-Tech company while living in the French
-              Pyrenees
-            </p>
-            <div className="flex gap-6 mb-4">
-              <EmailProtected
-                user="hello"
-                domain="gaetanmasson.me"
-                label="Email"
-                className="text-subtle hover:text-accent"
-              />
-              <a
-                href="https://linkedin.com/in/gaetanmasson"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-subtle hover:text-accent"
-              >
-                LinkedIn
-              </a>
-              <a href="/cv.pdf" className="text-subtle hover:text-accent">
-                CV
-              </a>
-            </div>
-            <p>&copy; {new Date().getFullYear()} Gaetan Masson</p>
-          </div>
-        </footer>
+        <SiteFooter />
       </body>
     </html>
   )
