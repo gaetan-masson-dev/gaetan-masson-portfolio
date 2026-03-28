@@ -41,7 +41,11 @@ export default function AboutPage() {
           I'm always interested in discussing design, technology, or collaborating on meaningful
           projects. Feel free to reach out via <a href="mailto:hello@gaetanmasson.me">email</a> or
           connect with me on{' '}
-          <a href="https://linkedin.com/in/gaetanmasson" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.linkedin.com/in/gaetan-masson-design"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             LinkedIn
           </a>
           .

@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { linkTextClass } from '@/lib/link-styles'
 import {
   DEFAULT_CASE_STUDY_IMAGE_HEIGHT,
   DEFAULT_CASE_STUDY_IMAGE_WIDTH,
@@ -22,7 +23,9 @@ export default function HomePage() {
           <br />
           I'm passionate about technology, sustainable living, and spirituality among other things.
           <br />
-          <Link href="/about">Learn more about me</Link>
+          <Link href="/about" className={linkTextClass}>
+            Learn more about me
+          </Link>
         </p>
       </section>
       <section className="grid gap-16">
@@ -47,8 +50,8 @@ export default function HomePage() {
                   </div>
                   <h2 className="text-[1.75rem] font-semibold mt-0 mb-3">
                     <Link
-                      href={`/case-studies/${caseStudy.slug}`}
-                      className="text-default no-underline hover:underline"
+                      href={`/work/${caseStudy.slug}`}
+                      className={`${linkTextClass} font-semibold`}
                     >
                       {caseStudy.frontmatter.title}
                     </Link>
@@ -57,8 +60,8 @@ export default function HomePage() {
                     {caseStudy.frontmatter.description}
                   </p>
                   <Link
-                    href={`/case-studies/${caseStudy.slug}`}
-                    className="inline-block font-medium no-underline hover:underline"
+                    href={`/work/${caseStudy.slug}`}
+                    className={`${linkTextClass} inline-block font-medium`}
                   >
                     Read case study →
                   </Link>
@@ -67,7 +70,7 @@ export default function HomePage() {
                 {/* Image */}
                 {caseStudy.frontmatter.image && (
                   <div className={imagePosition === 'left' ? 'md:order-1' : ''}>
-                    <Link href={`/case-studies/${caseStudy.slug}`} className="block group">
+                    <Link href={`/work/${caseStudy.slug}`} className="block group">
                       <div
                         className="relative w-full overflow-hidden rounded-lg bg-subtle/10"
                         style={{ aspectRatio: `${imageW} / ${imageH}` }}

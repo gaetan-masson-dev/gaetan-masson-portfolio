@@ -2,11 +2,10 @@
 title: Campaigns App
 category: UX Strategy
 description: Design and integrate a brand new marketing product with an already well established CRM platform
-role: Product Design Lead
-duration: 9 months
-team: Group PM, Engineering Manager, Design Lead, cross-functional squad
-scope: Contact management and marketing infrastructure within Campaigns App
-focus: Marketing status modeling, bulk updates, compliance & billing constraints
+contribution: Built foundation for email marketing capabilities
+scope: 0 -> 1 product expansion (CRM -> Marketing)
+context: New infrastructure + external editor limitations
+impact: Enabled campaign creation and marketing use cases
 logo: /images/campaigns-app/pipedrive_logo-1.svg
 image: /images/campaigns-app/Campaigns.png
 ---
@@ -95,15 +94,15 @@ The first question that we should have asked ourselves was: what is this marketi
 
 At the time it seemed obvious to me that our new status was behaving differently from other custom fields:
 
-Based on these differences, I advocated for treating Marketing Status as a dedicated field type rather than a regular custom field. Due to ownership gaps and timeline pressure, we shipped it as a standard field with additional logic.
+| Marketing status                                   | Custom field                        |
+| -------------------------------------------------- | ----------------------------------- |
+| Some values disabled the field (e.g. unsubscribed) | Can always be updated by users      |
+| Some values are system-generated (e.g. bounced)    | Values are always user-generated    |
+| Tied to email field                                | Not tied to any other custom fields |
+| Tied to our billing model                          | Not tied to a billing model         |
+| Updated by users' customers' actions               | Updated by users' actions           |
 
-| Marketing status | Custom field |
-| --- | --- |
-| Some values disabled the field (e.g. unsubscribed) | Can always be updated by users |
-| Some values are system-generated (e.g. bounced) | Values are always user-generated |
-| Tied to email field | Not tied to any other custom fields |
-| Tied to our billing model | Not tied to a billing model |
-| Updated by users' customers' actions | Updated by users' actions |
+Based on these differences, I advocated for treating Marketing Status as a dedicated field type rather than a regular custom field. Due to ownership gaps and timeline pressure, we shipped it as a standard field with additional logic.
 
 <Figure
   src="/images/campaigns-app/hands-on.pipedrive.com_deals_user_everyone-1.png"

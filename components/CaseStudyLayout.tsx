@@ -10,11 +10,12 @@ interface CaseStudyLayoutProps {
 
 export default function CaseStudyLayout({ frontmatter, children }: CaseStudyLayoutProps) {
   const metadata = [
-    { label: 'My role', value: frontmatter.role },
-    { label: 'Duration', value: frontmatter.duration },
-    { label: 'Team size', value: frontmatter.team },
+    ...(frontmatter.contribution
+      ? [{ label: 'Contribution', value: frontmatter.contribution }]
+      : []),
     ...(frontmatter.scope ? [{ label: 'Scope', value: frontmatter.scope }] : []),
-    ...(frontmatter.focus ? [{ label: 'Focus', value: frontmatter.focus }] : []),
+    ...(frontmatter.context ? [{ label: 'Context', value: frontmatter.context }] : []),
+    ...(frontmatter.impact ? [{ label: 'Impact', value: frontmatter.impact }] : []),
   ]
 
   return (
@@ -42,7 +43,7 @@ export default function CaseStudyLayout({ frontmatter, children }: CaseStudyLayo
           {frontmatter.description}
         </p>
 
-        <dl className="mt-12 grid gap-x-8 gap-y-8 border-t border-line pt-8 text-center sm:grid-cols-2 lg:grid-cols-5">
+        <dl className="mt-12 grid grid-cols-2 gap-[32px] border-t border-line pt-8 text-left">
           {metadata.map((item) => (
             <div key={item.label}>
               <dt className="mb-2 text-xs font-medium uppercase tracking-[0.12em] text-subtle">
