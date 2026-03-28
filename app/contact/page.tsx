@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 import EmailProtected from '@/components/EmailProtected'
+import { linkTextClass } from '@/lib/link-styles'
 
 export const metadata: Metadata = {
   title: 'Contact - Gaetan Masson',
@@ -24,7 +25,7 @@ export default function ContactPage() {
           <div>
             <strong className="block text-lg mb-2">Email</strong>
             <p>
-              <EmailProtected user="hello" domain="gaetanmasson.me" />
+              <EmailProtected user="hello" domain="gaetanmasson.me" className={linkTextClass} />
             </p>
           </div>
 
@@ -35,6 +36,7 @@ export default function ContactPage() {
                 href="https://www.linkedin.com/in/gaetan-masson-design"
                 target="_blank"
                 rel="noopener noreferrer"
+                className={linkTextClass}
               >
                 LinkedIn
               </a>
