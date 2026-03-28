@@ -14,6 +14,7 @@ export interface CaseStudyFrontmatter {
   team: string
   scope: string
   focus?: string
+  image?: string
 }
 
 export interface CaseStudy {
