@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="max-w-content mx-auto px-6">
-      <div>
+    <div className="max-w-7xl mx-auto px-6">
+      <div className="mx-auto max-w-measure">
         <h1>Contact</h1>
 
         <p>
@@ -32,7 +32,7 @@ export default function ContactPage() {
             <strong className="block text-lg mb-2">Social</strong>
             <p>
               <a
-                href="https://linkedin.com/in/gaetanmasson"
+                href="https://www.linkedin.com/in/gaetan-masson-design"
                 target="_blank"
                 rel="noopener noreferrer"
               >

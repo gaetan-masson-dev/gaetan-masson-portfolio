@@ -1,5 +1,6 @@
 import type { CaseStudyFrontmatter } from '@/lib/mdx'
 
+import Image from 'next/image'
 import { ReactNode } from 'react'
 
 interface CaseStudyLayoutProps {
@@ -8,33 +9,52 @@ interface CaseStudyLayoutProps {
 }
 
 export default function CaseStudyLayout({ frontmatter, children }: CaseStudyLayoutProps) {
+  const metadata = [
+    { label: 'My role', value: frontmatter.role },
+    { label: 'Duration', value: frontmatter.duration },
+    { label: 'Team size', value: frontmatter.team },
+    ...(frontmatter.scope ? [{ label: 'Scope', value: frontmatter.scope }] : []),
+    ...(frontmatter.focus ? [{ label: 'Focus', value: frontmatter.focus }] : []),
+  ]
+
   return (
     <article className="mb-16">
-      <header className="mb-12">
-        <h1 className="text-5xl md:text-6xl font-semibold">{frontmatter.title}</h1>
+      <header className="mx-auto max-w-5xl border-b border-line pb-10 pt-12 md:pb-14 md:pt-20">
+        {frontmatter.logo && (
+          <div className="mb-8 flex justify-center">
+            <Image
+              src={frontmatter.logo}
+              alt=""
+              aria-hidden="true"
+              width={180}
+              height={48}
+              className="h-10 w-auto md:h-12"
+            />
+          </div>
+        )}
+        <p className="mb-6 text-center text-sm font-medium uppercase tracking-[0.14em] text-subtle">
+          {frontmatter.category}
+        </p>
+        <h1 className="mx-auto max-w-4xl text-center text-5xl font-semibold md:text-7xl">
+          {frontmatter.title}
+        </h1>
+        <p className="mx-auto mt-8 max-w-measure text-center text-[1.75rem] leading-[1.45] text-default/85 md:text-[2.125rem]">
+          {frontmatter.description}
+        </p>
 
-        <div className="grid gap-4 p-8 bg-gray-50 rounded-lg mb-12 mt-8">
-          <div className="text-[0.9375rem]">
-            <strong className="font-semibold mr-2">Role:</strong> {frontmatter.role}
-          </div>
-          <div className="text-[0.9375rem]">
-            <strong className="font-semibold mr-2">Duration:</strong> {frontmatter.duration}
-          </div>
-          <div className="text-[0.9375rem]">
-            <strong className="font-semibold mr-2">Team:</strong> {frontmatter.team}
-          </div>
-          <div className="text-[0.9375rem]">
-            <strong className="font-semibold mr-2">Scope:</strong> {frontmatter.scope}
-          </div>
-          {frontmatter.focus && (
-            <div className="text-[0.9375rem]">
-              <strong className="font-semibold mr-2">Focus:</strong> {frontmatter.focus}
+        <dl className="mt-12 grid gap-x-8 gap-y-8 border-t border-line pt-8 text-center sm:grid-cols-2 lg:grid-cols-5">
+          {metadata.map((item) => (
+            <div key={item.label}>
+              <dt className="mb-2 text-xs font-medium uppercase tracking-[0.12em] text-subtle">
+                {item.label}
+              </dt>
+              <dd className="text-[1rem] leading-[1.5] text-default">{item.value}</dd>
             </div>
-          )}
-        </div>
+          ))}
+        </dl>
       </header>
 
-      <div className="max-w-content">{children}</div>
+      <div className="case-study-content mx-auto max-w-measure pt-12 md:pt-16">{children}</div>
     </article>
   )
 }

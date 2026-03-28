@@ -50,7 +50,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   }
 
   return (
-    <div className="container">
+    <div className="max-w-7xl mx-auto px-6">
       <CaseStudyLayout frontmatter={caseStudy.frontmatter}>
         <MDXRemote source={caseStudy.content} components={components} />
       </CaseStudyLayout>
