@@ -20,6 +20,9 @@ Each case study must include:
 - `team`: string
 - `scope`: string
 - `focus`: string (optional)
+- `logo`: string (optional) — decorative header logo path under `public/`, e.g. `/images/slug/logo.svg`
+- `image`: string (optional) — path under `public/`, e.g. `/images/slug/hero.png`
+- `imageWidth` / `imageHeight`: numbers (optional) — intrinsic pixel size of `image` for correct home preview aspect; defaults match shared hero exports (1606×1008) if omitted
 
 ## MDX Components
 - **Figure**: Use the `<Figure />` component for all images.

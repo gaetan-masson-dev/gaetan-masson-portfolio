@@ -1,7 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { getCaseStudies } from '@/lib/mdx'
+import {
+  DEFAULT_CASE_STUDY_IMAGE_HEIGHT,
+  DEFAULT_CASE_STUDY_IMAGE_WIDTH,
+  getCaseStudies,
+} from '@/lib/mdx'
 
 export default function HomePage() {
   const caseStudies = getCaseStudies()
@@ -25,6 +29,8 @@ export default function HomePage() {
         {caseStudies.map((caseStudy, index) => {
           const isEven = index % 2 === 0
           const imagePosition = isEven ? 'right' : 'left'
+          const imageW = caseStudy.frontmatter.imageWidth ?? DEFAULT_CASE_STUDY_IMAGE_WIDTH
+          const imageH = caseStudy.frontmatter.imageHeight ?? DEFAULT_CASE_STUDY_IMAGE_HEIGHT
 
           return (
             <article
@@ -62,12 +68,17 @@ export default function HomePage() {
                 {caseStudy.frontmatter.image && (
                   <div className={imagePosition === 'left' ? 'md:order-1' : ''}>
                     <Link href={`/case-studies/${caseStudy.slug}`} className="block group">
-                      <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-subtle/10">
+                      <div
+                        className="relative w-full overflow-hidden rounded-lg bg-subtle/10"
+                        style={{ aspectRatio: `${imageW} / ${imageH}` }}
+                      >
                         <Image
                           src={caseStudy.frontmatter.image}
                           alt={caseStudy.frontmatter.title}
                           fill
-                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          priority={index === 0}
+                          className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
                         />
                       </div>
                     </Link>

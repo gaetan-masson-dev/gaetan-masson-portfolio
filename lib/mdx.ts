@@ -5,6 +5,10 @@ import matter from 'gray-matter'
 
 const caseStudiesDirectory = path.join(process.cwd(), 'content/case-studies')
 
+/** Default intrinsic size of hero PNGs; set `imageWidth` / `imageHeight` in frontmatter when an asset differs. */
+export const DEFAULT_CASE_STUDY_IMAGE_WIDTH = 1606
+export const DEFAULT_CASE_STUDY_IMAGE_HEIGHT = 1008
+
 export interface CaseStudyFrontmatter {
   title: string
   category: string
@@ -12,9 +16,12 @@ export interface CaseStudyFrontmatter {
   role: string
   duration: string
   team: string
-  scope: string
+  scope?: string
   focus?: string
+  logo?: string
   image?: string
+  imageWidth?: number
+  imageHeight?: number
 }
 
 export interface CaseStudy {
