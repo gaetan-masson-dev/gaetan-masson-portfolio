@@ -5,6 +5,10 @@
 export const linkTextClass =
   'text-accent underline decoration-accent underline-offset-[0.18em] hover:text-accent-hover hover:decoration-accent-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-sm'
 
+/** Home work list: title reads as a heading; underline on hover only for affordance. */
+export const caseStudyTitleLinkClass =
+  'text-default no-underline font-semibold underline-offset-[0.18em] decoration-default hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-sm'
+
 const navFocusVisibleClass =
   'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-sm'
 
