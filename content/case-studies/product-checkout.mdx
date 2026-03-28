@@ -1,155 +1,132 @@
 ---
-title: Product Checkout
+title: Product checkout
 category: Interaction design
 description: Building a checkout flow allowing users to book accommodation and marine activities in a few clicks
 role: Lead Product Designer
 duration: 3 months
-team: 1 designer (me), 3 developers, 1 PM
-scope: End-to-end checkout experience design
-focus: Conversion optimization, mobile experience
-image: /images/product-checkout/checkout-flow.png
+team: 1 Product Manager, 2 Engineers
+logo: /images/product-checkout/Dark-logo.svg
+image: /images/product-checkout/Checkout.png
 ---
 
-## Overview
+## Summary
 
-A tourism platform needed a streamlined checkout flow for booking combined packages of accommodation and marine activities (diving, sailing, snorkeling). The existing process required users to book each item separately, leading to high cart abandonment.
+ZuBlu is a dive travel startup revolutionising its market by allowing customers to book sustainable accommodations and diving trips at once.
 
-## The Challenge
+In October 2019, when I joined ZuBlu's team, they were fresh out of the [Betatron accelerator program](https://www.betatron.co/) in Hong Kong. Until that point, all designs had been made by Adam, ZuBlu's CEO, and it was developed by [Digital Butter](https://www.butter.com.hk/), a local web agency. After analysing the state of the product, we decided to focus on a major question:
 
-The original checkout process was fragmented:
+How could we improve users' checkout experience?
 
-- Users had to complete separate bookings for accommodation and activities
-- Payment happened twice, creating friction and confusion
-- No clear overview of total package pricing
-- Mobile experience was particularly painful (60% of traffic)
-- Cart abandonment rate was 78%
+---
 
-The business goal was clear: create a unified checkout that felt as simple as booking a hotel, even though we were coordinating multiple vendors and complex scheduling.
+## Problem
+
+When we started working on this project, the default booking flow was:
+
+Supplier answers yes or no
+
+1. If yes, our salesperson validates trip and sends a payment link to the user
+2. If no, the user is back to step 6
 
 <Figure
-  src="/images/product-checkout/old-flow.png"
-  alt="Original checkout flow diagram"
-  caption="The fragmented original checkout requiring multiple separate bookings"
+  src="/images/product-checkout/screencapture-zubludiving-enquiry-direct-2019-10-18-14_38_39.png"
+  alt=""
+  caption="The initial checkout experience was a simple form"
 />
 
-## Research
+In the form step, users weren't presented with the final price. They were only shown an average room price per night and limited options to customise their trip. The form was actually well below the fold. Unique Selling Points were still presented to users at this stage while they should be displayed higher in the sale funnel if at all necessary.
 
-I analyzed user behavior through session recordings and conducted interviews with 12 users who had abandoned bookings:
+After completing this step, it would take up to a few weeks of back and forths between the user, our salesperson and our suppliers to conclude a deal. The experience was functional but felt incomplete and clunky compared to the ones provided by industry leaders such as Airbnb or Booking.com.
 
-### Key Insights
+---
 
-- Users expected to book everything in one transaction
-- Uncertainty about activity timing relative to accommodation created anxiety
-- Mobile users struggled with form inputs and date selection
-- Users abandoned when surprised by additional fees late in checkout
-- Need to compare different activity options without losing accommodation selection
+## Role
 
-## Design Principles
+When I started working on this project, ZuBlu was outsourcing everything. There weren't any Designers, no Product Managers and only a single part-time Engineer. Because the team was so small, I was paired directly with Adam, our CEO, and provided input on many different topics such as marketing, engineering and of course design. For the first time, I had the chance to use most skills I had acquired during my career.
 
-Based on research, I established core principles:
+---
 
-1. **Transparent pricing**: Show all costs upfront, no surprises
-2. **Unified flow**: One cart, one checkout, one payment
-3. **Flexibility**: Easy to modify package before payment
-4. **Mobile-first**: Optimize for touch and smaller screens
-5. **Confidence**: Clear information about timing, policies, and what's included
+## Approach
+
+We researched and defined what was missing for users to enhance their purchase experience on our platform. We first looked at what other direct and indirect competitors were doing. We then proceeded with users and internal salespeople surveys to learn what was the most important information users needed in order to make a successful purchase.
+
+<Figure
+  src="/images/product-checkout/Airbnb-1.png"
+  alt=""
+  caption="Airbnb clean checkout experience"
+/>
+
+After analysing the results, we realised that most users would be either certified divers or want to learn scuba diving, that the average booking would be 2.2 guests and that users only needed some basic but valuable customisation options. Based on these findings, we decided to limit trip customisation options. This would allow us to create a simple and quick user flow for the majority of our users.
+
+<Figure
+  src="/images/product-checkout/Checkout-flow-1.jpg"
+  alt=""
+  caption="Our simple user flow"
+/>
+
+We created a 5 steps flow where users could select activities (diving, snorkelling, learning), select rooms (type and amount), select transfer options (self-transfer, car, boat, etc.), provide their details (name, email, phone, etc.) and finally review their enquiry before sending it over. Amount of guests and travel date would be informed on the supplier page, before entering the booking flow.
+
+---
 
 ## Solution
 
-### Unified Cart
-
-Redesigned the cart to show accommodation + activities as a cohesive package:
-
-- Visual timeline showing how activities fit with accommodation dates
-- Clear breakdown of costs (accommodation, activities, fees, taxes)
-- Easy to add/remove activities without losing progress
+After testing different iterations, we validated three different flows for custom resorts, package resorts and liveaboards. On top of this, we added a quick checkout flow for large groups, activities and eco-ventures. This quick flow allows our sales team to handle group bookings which usually need more customisation and provide higher revenue.
 
 <Figure
-  src="/images/product-checkout/unified-cart.png"
-  alt="Unified shopping cart interface"
-  caption="Cart showing accommodation and activities as one coordinated package"
+  src="/images/product-checkout/Checkout-flow.jpg"
+  alt=""
+  caption="The whole flow was designed with a mobile-first approach"
 />
 
-### Streamlined Form
+The default flow booking flow was now:
 
-Simplified information collection:
+User completes a 5 steps checkout:
 
-- Smart defaults based on accommodation booking (dates, guest count)
-- Progressive disclosure of required fields
-- Mobile-optimized date picker and input fields
-- Save guest information for faster repeat bookings
+1. Activities
+2. Rooms
+3. Transfers
+4. Details
+5. Review
+
+Supplier answers yes or no to email
+
+1. If yes, our salesperson validates trip and send a payment link to user
+2. If no, our salesperson picks up the conversation and offers another resort to the user
 
 <Figure
-  src="/images/product-checkout/checkout-form.png"
-  alt="Checkout form interface"
-  caption="Streamlined form with smart defaults and mobile-optimized inputs"
+  src="/images/product-checkout/Checkout-1.jpg"
+  alt=""
+  caption="Each step focuses on solving a single part of the vacation equation"
 />
 
-### Activity Scheduling
+With each flow, we were able to solve our pricing transparency and trip customisation issues for 90% of our users. The last 10% of users who might need in-depth customisation are invited to contact our sales team directly so that we can create the perfect trip for them. We went from an average booking process length of 7 days to an average of 2 days.
 
-Created an intuitive way to schedule activities:
+---
 
-- Visual calendar showing available time slots
-- Automatic conflict detection if activities overlap
-- Suggestions for optimal activity scheduling based on popular patterns
-- Clear indication of last booking time before trip
+## Challenges
 
-### Review & Confirmation
-
-Final review step with clear summary:
-
-- Complete itinerary with accommodation and activity schedule
-- Total cost breakdown
-- Cancellation and modification policies
-- What to expect next (confirmation emails, check-in details)
+During ideation, we realised that one of our product subcategories, package resorts, was much more complicated than anticipated. It had much more constraints than its sibling, custom resorts. This type of resort would only allow users to arrive on certain weekdays and for a fixed amount of time. They would have prices per user type (diver, non-diver) rather than prices per room type which would create a complicated price matrix that seemed neither easy to grasp nor flexible for users.
 
 <Figure
-  src="/images/product-checkout/confirmation.png"
-  alt="Booking confirmation screen"
-  caption="Clear confirmation with complete itinerary and next steps"
+  src="/images/product-checkout/Checkout-package.jpg"
+  alt=""
+  caption="Package resorts provide all-included packages rather than separately priced rooms and activities"
 />
 
-## Mobile Optimization
+After exploring different solutions and based on the fact that most bookings had only 2 guests, we decided to greatly simplify this product by allowing users to select only a single room type rather than multiple rooms from any type. This greatly simplified the price matrix for 90% of our users.
 
-Given 60% mobile traffic, I paid special attention to mobile experience:
+Some product specificities are to predict and can only be discovered through user testing. When we first tried to apply the custom resort flow to our package resort product, we quickly hit a wall and had to go back to the drawing board.
 
-- Large touch targets (minimum 44px)
-- Single-column layout to avoid horizontal scrolling
-- Native date pickers where available
-- Sticky bottom bar with total price and CTA
-- Smart keyboard types for different inputs (email, phone, numbers)
-
-## Testing & Iteration
-
-Conducted usability testing with 10 participants (5 mobile, 5 desktop):
-
-### Initial Findings
-
-- Date picker was confusing for activity scheduling
-- Users wanted to see photos of activities in the cart
-- Pricing breakdown needed to be more prominent
-- Mobile form required too much scrolling
-
-### Refinements
-
-- Redesigned activity scheduler with visual day selector
-- Added activity thumbnails to cart
-- Made pricing sticky on scroll
-- Reduced mobile form fields by consolidating related information
+---
 
 ## Results
 
-The new checkout flow significantly improved conversion:
+At the time of writing this case study, we have had really little user feedback regarding those two valuable functionality redesigns. The global pandemic and the travel limitations it created made our business and platform traffic to a halt. We will monitor the result of this work in the coming months when international vacations resume which will, in turn, allow us to iterate on the current design.
 
-- Cart abandonment decreased from 78% to 34%
-- Booking completion time reduced from 12 minutes to 4 minutes
-- Mobile conversion improved by 156%
-- Customer support inquiries about booking process dropped by 65%
-- Average booking value increased by 23% (users added more activities)
+---
 
-## Key Learnings
+## Learnings
 
-- **Remove uncertainty**: Users need confidence about scheduling, costs, and policies before committing
-- **Mobile isn't just smaller desktop**: Touch targets, input types, and interaction patterns need specific consideration
-- **One flow, many edge cases**: Complex backend coordination must be hidden behind simple interface
-- **Test with real content**: Generic lorem ipsum hid issues that only appeared with actual activity names and descriptions
+The main learnings acquired during this project have been more related to the global situation rather than the design process itself. How to test a solution when no one uses a product (no international travels in 2020)?
+
+I always advocate for evidence-based design with proper research to learn and iterate, yet sometimes, going with one's assumptions, quick guerrilla testing and monitoring live results is a quick and efficient way for small teams to deliver fast.

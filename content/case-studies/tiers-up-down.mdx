@@ -1,238 +1,111 @@
 ---
-title: Tiers Up and Down
+title: Tiers up and down
 category: UX Strategy
 description: Improving features discovery and creating account upgrade flows to increase growth and revenue
-role: Lead Product Designer
-duration: 5 months
-team: 2 designers, 5 developers, 1 PM, 1 growth analyst
+role: Product Designer
+duration: 3 Months
+team: Cross-functional (Product Marketing, Sales, Billing, Engineering)
 scope: Pricing strategy, upgrade flows, feature discovery
-focus: Conversion optimization, product-led growth
-image: /images/tiers-up-down/upgrade-flow.png
+focus: Growth UX, value communication, and legacy billing constraints
+logo: /images/tiers-up-down/pipedrive_logo-1.svg
+image: /images/tiers-up-down/Tiers.png
 ---
 
-## Overview
+## Summary
 
-A SaaS platform had three pricing tiers (Free, Pro, Enterprise) but struggled with conversions from free to paid. Free users didn't understand the value of upgrading, and the upgrade experience was confusing. We needed to improve feature discovery and create clear paths to paid tiers.
+As Pipedrive's product matured and the feature set expanded, the company needed to better communicate the value of its different subscription tiers and encourage sustainable revenue growth.
 
-## The Challenge
+At the time, the majority of users remained on the lowest tier despite the availability of higher-value features. The challenge was not only to improve feature discoverability, but also to help users understand the value of each tier and upgrade their subscriptions within the constraints of a legacy billing system.
 
-Despite strong product-market fit, conversion metrics were concerning:
+---
 
-- Only 4% of free users upgraded to paid plans
-- Users hitting plan limits often churned rather than upgraded
-- Feature discovery was poor (users didn't know premium features existed)
-- No clear differentiation between Pro and Enterprise tiers
-- Upgrade flow was a simple "Choose a plan" page with no context
-- Downgrade from Enterprise required contacting sales (created friction)
+## My role
 
-The business needed better conversion without compromising the free tier's value or creating a pushy experience.
+I joined the project as Lead Product Designer within a cross-functional product marketing and engineering team. My role focused on researching feature discoverability, defining upgrade pathways, and coordinating delivery across multiple teams responsible for implementing tier-related marketing and product surfaces.
 
-<Figure
-  src="/images/tiers-up-down/original-metrics.png"
-  alt="Original conversion metrics dashboard"
-  caption="Baseline metrics showing 4% free-to-paid conversion rate"
-/>
+---
 
-## Research
+## Problem
 
-We conducted research to understand the upgrade decision process:
+Pipedrive offered a 14-day free trial followed by three subscription tiers: Silver, Gold, and Platinum. However, nearly 90% of users remained on the Silver tier, while higher tiers provided only marginally differentiated value beyond a few key features such as Email Inbox.
 
-### User Interviews
-
-Interviewed 25 users across all tiers:
-
-- **Free users**: Didn't know what premium features did or why they'd need them
-- **Pro users**: Discovered features by accident, wished they'd upgraded sooner
-- **Enterprise users**: Wanted flexibility to downgrade during seasonal lulls
-- **Churned users**: Hit limits but didn't see value in upgrading
-
-### Competitive Analysis
-
-Studied how successful SaaS products handle tier differentiation and upgrades:
-
-- Slack's gentle feature discovery approach
-- Figma's contextual upgrade prompts
-- Notion's progressive limit enforcement
-- Dropbox's visual storage representations
-
-### Analytics Deep-Dive
-
-Analyzed 6 months of product usage data:
-
-- Free users heavily used features that had premium versions they didn't know about
-- 70% of users hit limits without attempting to upgrade
-- Users who tried one premium feature were 5x more likely to convert
-- Mobile users rarely encountered upgrade prompts
+In practice, the Platinum tier functioned more as a pricing anchor than a genuinely adopted plan, which limited both user progression and revenue growth.
 
 <Figure
-  src="/images/tiers-up-down/user-journey.png"
-  alt="User journey map"
-  caption="Journey map showing disconnect between feature usage and upgrade awareness"
+  src="/images/tiers-up-down/old-modal.png"
+  alt=""
+  caption="The only way of upgrading an account was through the old pricing modal. It was only accessible from the billing view and had CTAs placed below the fold."
 />
 
-## Strategy
+## Approach
 
-Developed a multi-faceted approach:
+To better scope the problem, we first reframed it into clear, actionable product questions rather than isolated UX issues.
 
-### Feature Discovery
+This led to two core questions:
 
-Help users understand premium features before they hit limits:
+- How can users better discover the value of higher-tier features?
+- How can upgrades be made clearer and more accessible within the product experience?
 
-- Contextual feature previews showing what's available in paid tiers
-- "Used by Pro users" social proof for premium features
-- Trial periods for individual features before requiring upgrade
-- Educational tooltips explaining premium capabilities
+The first workstream focused on discoverability and value communication, explored in close collaboration with the Product Marketing team. Early findings showed that trial users often struggled to understand their current pricing tier and the value associated with higher-tier features.
 
-### Soft Limits
-
-Replace hard blockers with gentle nudges:
-
-- Preview premium results but blur them with upgrade CTA
-- Allow occasional premium actions on free plan (create appetite)
-- Clear progress indicators showing plan usage
-- Advance warning before hitting limits
-
-### Value-Based Upgrades
-
-Show value, not just features:
-
-- ROI calculators for specific use cases
-- Success stories from similar users who upgraded
-- Comparison showing what's possible at each tier
-- Time/efficiency savings from premium features
-
-## Solution
-
-### In-App Feature Discovery
-
-Redesigned how users discover premium features:
+The second workstream focused on upgrade feasibility and was tackled together with the Sales and Billing teams. The billing system was one of the oldest legacy components still in production, significantly constraining engineering options and requiring a pragmatic solution that could be delivered within tight timelines.
 
 <Figure
-  src="/images/tiers-up-down/feature-discovery.png"
-  alt="Feature discovery interface"
-  caption="Contextual previews showing premium features where users work"
+  src="/images/tiers-up-down/Deal-view-gold.png"
+  alt=""
+  caption="Trial users often struggled to identify their current pricing tier and available features"
 />
 
-#### Premium Feature Previews
+## Key Design Decisions
 
-- Inline cards showing "This premium feature can..." with benefits
-- "Try it once" options letting free users sample premium features
-- Usage examples from similar users' workflows
-- Clear tier indicators without being pushy
+To improve higher-tier feature discoverability, we first made gated features visible directly within the product navigation by adding subtle icons next to their labels. Previously, users on lower tiers were completely blocked from these features and often unaware of their existence.
 
-#### Feature Tours
-
-- Onboarding flow highlighting features relevant to user's use case
-- Role-based tours (marketer sees marketing features, designer sees design features)
-- Dismissible but easily accessible later
-
-### Contextual Upgrade Prompts
-
-Created situation-specific upgrade moments:
+To complement this visibility, we introduced contextual empty states for gated features. Once users discovered a feature, the empty state provided a concise explanation of its functionality, a UI preview, and a clear upgrade call to action. Each empty state was designed in collaboration with the designer owning the feature and implemented by the respective product team to ensure consistency and accuracy.
 
 <Figure
-  src="/images/tiers-up-down/upgrade-prompt.png"
-  alt="Contextual upgrade prompt"
-  caption="Upgrade prompts tied to specific user goals and contexts"
+  src="/images/tiers-up-down/Scheduling-teaser.png"
+  alt=""
+  caption="We added a subtle icon next to feature labels and created custom empty states for each feature tied to a higher pricing tier"
 />
 
-#### Smart Timing
+In parallel, we designed a global tier comparison modal accessible from multiple entry points across the product. The goal was to help users understand the value of each subscription tier without overwhelming them with a long list of features. Instead of replicating the marketing website structure, we focused on clear pricing, tier-specific features, and prominent upgrade CTAs to support faster decision-making.
 
-- Triggered when user attempts premium action (not arbitrary)
-- Shown after user completes successful task (positive moment)
-- Limited frequency to avoid annoyance
-- Personalized to user's actual usage patterns
-
-#### Clear Value Proposition
-
-- Specific to current task: "Upgrade to Pro to export in multiple formats"
-- Shows exactly what they'll unlock
-- Comparison with current plan limitations
-- Simple, single-CTA design
-
-### Improved Upgrade Flow
-
-Redesigned the upgrade experience:
+Finally, we improved trial transparency by introducing tier badges in the top bar for trial users. The badge provided immediate visibility into the user's current tier and remaining trial duration, while also serving as a direct entry point to the billing modal. This helped users better plan their trial usage and increased clarity around pricing and tier progression, especially after extending the trial length to 14 days and adjusting tier pricing.
 
 <Figure
-  src="/images/tiers-up-down/upgrade-flow.png"
-  alt="Upgrade flow interface"
-  caption="Streamlined upgrade flow with clear plan comparison"
+  src="/images/tiers-up-down/Modal.png"
+  alt=""
+  caption="The redesigned modal clarified pricing and moved CTAs above the fold"
 />
 
-#### Plan Comparison
+---
 
-- Side-by-side comparison with current plan highlighted
-- Feature explanations, not just lists
-- Usage-based recommendations ("Based on your activity, Pro fits best")
-- FAQ addressing common concerns
+## Constraints & tradeoffs
 
-#### Flexible Checkout
+The primary constraint throughout the project was the legacy billing infrastructure, which remained part of a monolithic PHP codebase and had not yet been migrated to a microservices architecture. This significantly limited the range of UX improvements we could implement in the subscription flow and directly influenced the decision to use a modal-based upgrade experience rather than a fully redesigned checkout journey.
 
-- Monthly/annual toggle with savings calculation
-- Team size selection for Pro tier
-- Add-ons (storage, seats) clearly presented
-- Trial period option for annual plans
+Another challenge was coordinating the implementation of meaningful empty states across multiple product teams. The tier relaunch required several features to be ready simultaneously, which created strong delivery pressure and competing priorities. Ensuring consistent messaging and timely implementation required continuous stakeholder alignment and cross-team coordination.
 
-### Downgrade Experience
+Finally, we had to carefully balance product growth objectives with user trust. While internal analysis showed that the Gold tier provided the strongest value proposition, the goal was not to introduce aggressive upsell patterns. Instead, we focused on transparent communication of tier value and contextual upgrade prompts, allowing users to make informed decisions without feeling pressured.
 
-Made it easy to adjust plans:
-
-- Self-service downgrade (no sales calls required)
-- Clear explanation of what they'll lose
-- Option to pause instead of downgrade
-- Save settings/data for 30 days if they want to return
-
-<Figure
-  src="/images/tiers-up-down/downgrade-flow.png"
-  alt="Downgrade flow"
-  caption="Self-service downgrade with clear impact explanation"
-/>
-
-## Testing & Iteration
-
-Ran A/B tests on key elements:
-
-### Feature Discovery
-
-- Tested different preview styles (blurred vs. locked vs. demo mode)
-- Measured impact on upgrade consideration
-- Result: Demo mode performed best (45% engaged with preview)
-
-### Upgrade Prompt Timing
-
-- Tested showing prompts at different points in workflow
-- Measured annoyance vs. conversion
-- Result: Post-success moments converted 3x better than mid-task
-
-### Plan Comparison Layout
-
-- Tested vertical vs. horizontal comparison
-- Measured comprehension and decision time
-- Result: Vertical layout (cards) performed better on mobile
+---
 
 ## Results
 
-The new upgrade experience significantly improved conversions:
+The impact of the tier revamp could be directly evaluated through subscription and conversion metrics over a three-month period following launch.
 
-- Free-to-paid conversion increased from 4% to 11%
-- Time from signup to first upgrade reduced from 90 days to 45 days
-- Feature discovery improved (70% of users now try premium features on free plan)
-- Upgrade cart abandonment decreased from 55% to 22%
-- Customer lifetime value increased by 34%
-- Enterprise downgrades became 60% less common (better tier fit upfront)
+The data showed a significant shift in tier adoption. Gold tier conversion increased from 9% to 47% of trial users, while Platinum tier conversion rose from 1% to 5%. These results suggested that improved feature discoverability, clearer value communication, and more transparent upgrade pathways helped users better understand the value of higher-tier plans.
 
-<Figure
-  src="/images/tiers-up-down/results-metrics.png"
-  alt="Results dashboard"
-  caption="Improved conversion metrics after implementing new upgrade flows"
-/>
+However, we also observed a decrease in the overall trial-to-paying customer conversion rate. This outcome was anticipated to some extent, as the tier revamp included higher subscription pricing and placed trial users on the Gold tier by default, increasing the commitment required at the point of conversion.
 
-## Key Learnings
+Following this observation, we initiated further analysis and iteration to better understand user drop-off patterns and refine the balance between pricing strategy, perceived value, and conversion performance.
 
-- **Show, don't tell**: Letting users preview premium features was far more effective than describing them
-- **Timing is everything**: Upgrade prompts during moments of success converted much better than interruptions during work
-- **Remove friction everywhere**: Self-service downgrade actually reduced downgrades by helping users choose better tiers initially
-- **Personalization matters**: Usage-based recommendations significantly improved conversion by matching users to appropriate tiers
-- **Gentle beats aggressive**: Soft limits and previews outperformed hard blockers and pushy CTAs
-- **Mobile is different**: Upgrade flows needed significant simplification for mobile (where 40% of conversions happened)
+---
+
+## Learnings
+
+This project reinforced the importance of early stakeholder alignment and clear goal setting in complex, cross-functional initiatives. Establishing a shared understanding of objectives, constraints, and available resources from the outset proved essential to securing long-term buy-in across teams.
+
+It also highlighted the impact of legacy systems and engineering limitations on design feasibility. While initial solutions were designed for ideal user flows, technical realities revealed that some implementations would require 6 to 9 months of development, while the project timeline allowed for only 3 months.
+
+This led to a necessary reframing of the design approach, prioritising pragmatic solutions that could operate within existing constraints rather than pursuing optimal but unrealistic flows. The experience strengthened my ability to balance product ambition, technical feasibility, and delivery timelines in real-world product environments.
