@@ -13,22 +13,23 @@ export default function HomePage() {
 
   return (
     <div className="max-w-7xl mx-auto px-6">
-      <section className="mb-16 border-b border-line pb-16">
+      <section className="border-b border-line pt-32 pb-32">
         <h1 className="text-[3.5rem] md:text-[4.5rem] leading-tight font-semibold mb-6">
           Hi, I'm Gaetan!
         </h1>
-        <p className="text-2xl text-subtle">
+        <p className="text-xl text-subtle">
           Lead Product Designer specializing in complex SaaS products, systems thinking, and
           cross-functional collaboration.
           <br />
           I'm passionate about technology, sustainable living, and spirituality among other things.
-          <br />
+        </p>
+        <p className="text-xl text-subtle">
           <Link href="/about" className={linkTextClass}>
             Learn more about me
           </Link>
         </p>
       </section>
-      <section className="grid gap-16">
+      <section className="grid gap-32 pt-32 pb-32">
         {caseStudies.map((caseStudy, index) => {
           const isEven = index % 2 === 0
           const imagePosition = isEven ? 'right' : 'left'
@@ -38,10 +39,10 @@ export default function HomePage() {
           return (
             <article
               key={caseStudy.slug}
-              className="pb-12 border-b border-line last:border-b-0 last:pb-0"
+              className="pb-32 border-b border-line last:border-b-0 last:pb-0"
             >
               <div
-                className={`grid md:grid-cols-2 gap-8 items-center ${imagePosition === 'left' ? 'md:flex-row-reverse' : ''}`}
+                className={`grid md:grid-cols-2 gap-16 items-center ${imagePosition === 'left' ? 'md:flex-row-reverse' : ''}`}
               >
                 {/* Content */}
                 <div className={imagePosition === 'left' ? 'md:order-2' : ''}>

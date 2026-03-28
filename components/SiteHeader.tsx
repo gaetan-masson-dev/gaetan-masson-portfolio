@@ -9,7 +9,7 @@ export default function SiteHeader() {
   const pathname = usePathname()
 
   return (
-    <header className="border-b border-line py-8 mb-12 max-w-7xl mx-auto">
+    <header className="border-b border-line py-8 max-w-7xl mx-auto">
       <div className="max-w-wide mx-auto px-6 flex justify-between items-center flex-col md:flex-row gap-6 md:items-center">
         <Link
           href="/"
