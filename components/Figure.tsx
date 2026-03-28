@@ -11,9 +11,15 @@ interface FigureProps {
 export default function Figure({ src, alt, caption, width = 1200, height = 800 }: FigureProps) {
   return (
     <figure className="my-12">
-      <Image src={src} alt={alt} width={width} height={height} className="w-full h-auto rounded" />
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className="h-auto w-full shadow-[0_18px_45px_rgba(26,26,26,0.12)]"
+      />
       {caption && (
-        <figcaption className="mt-4 text-sm text-text-light text-center">{caption}</figcaption>
+        <figcaption className="mt-4 text-sm text-subtle text-center">{caption}</figcaption>
       )}
     </figure>
   )
