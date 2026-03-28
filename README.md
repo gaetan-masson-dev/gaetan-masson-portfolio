@@ -25,7 +25,7 @@ A minimal, production-ready portfolio site built with Next.js 15 and MDX, showca
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
 
 ### Installation
@@ -94,11 +94,7 @@ Your case study content here...
 4. Reference images in MDX using the Figure component:
 
 ```mdx
-<Figure 
-  src="/images/your-case-study-slug/image.png" 
-  alt="Description" 
-  caption="Optional caption" 
-/>
+<Figure src="/images/your-case-study-slug/image.png" alt="Description" caption="Optional caption" />
 ```
 
 ## Deployment
@@ -122,6 +118,7 @@ The built site will be in the `.next` folder. Deploy to any static hosting provi
 ### Styling
 
 Edit `styles/globals.css` to customize:
+
 - Color scheme (CSS variables in `:root`)
 - Typography (font families, sizes)
 - Spacing scale
@@ -137,6 +134,7 @@ Edit `styles/globals.css` to customize:
 ### Metadata
 
 Update SEO metadata in:
+
 - `app/layout.tsx` - Site-wide defaults
 - `app/about/page.tsx` - About page metadata
 - `app/case-studies/[slug]/page.tsx` - Case study metadata
@@ -148,6 +146,7 @@ MIT License - see LICENSE file for details
 ## Author
 
 **Gaetan Masson**
+
 - Website: [gaetanmasson.me](https://gaetanmasson.me)
 - Email: hello@gaetanmasson.me
 - LinkedIn: [linkedin.com/in/gaetanmasson](https://linkedin.com/in/gaetanmasson)
